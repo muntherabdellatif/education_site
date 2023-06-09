@@ -1,0 +1,99 @@
+@import "../../styles";
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $nav-color-light-mode;
+  z-index: 9999;
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: $page-padding;
+  padding-right: $page-padding;
+  box-sizing: border-box;
+  border-bottom: solid 1px $nav-border-color-light-made;
+
+  .log_container {
+    display: flex;
+    align-items: center;
+
+    .logo {
+        color: $main_text_color_light_mode;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    h1 {
+      color: $main_text_color_light_mode;
+      margin-left: 10px;
+      font-family: $site-name-font;
+    }
+  }
+
+  .search_container {
+    border: $input-border-light-mode;
+    border-radius: $input-border-radius;
+
+    .search-input {
+      color: $main_text_color_light_mode;;
+      padding: $input-padding;
+      border: none;
+      width: 220px;
+      font-size: 18px;
+    }
+
+    .search-input::placeholder {
+      color: $main_text_color_light_mode;;
+      font-size: 18px;
+    }
+
+    .search-input:focus {
+      border: none;
+      outline: none;
+      caret-color: $main_text_color_light_mode;
+    }
+
+    .icon {
+      padding: $input-padding;
+      color: $input-icon-color;
+      cursor: pointer;
+    }
+
+    .optionSelect {
+      cursor: pointer;
+      padding: $input-padding;
+      border: none;
+      border-left: $input-border-light-mode;
+      width: 130px;
+      font-size: 18px;
+
+      option {
+        cursor: pointer;
+      }
+    }
+
+    .optionSelect:focus {
+      border: none;
+      border-left: $input-border-light-mode;
+      outline: none;
+    }
+
+  }
+
+  .icon_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 173px;
+    .icon {
+      font-size: 25px;
+      cursor: pointer;
+      color: $main_text_color_light_mode;
+    }
+  }
+
+
+}
