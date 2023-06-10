@@ -1,0 +1,53 @@
+<div *ngFor="let arrow of arrows" class="graph__wrapper">
+  <svg
+    width="315px"
+    height="107px"
+    viewBox="0 0 315 107"
+    version="1.1"
+    style="overflow: visible"
+  >
+    <g
+      id="Page-1"
+      stroke="none"
+      stroke-width="1"
+      fill="none"
+      fill-rule="evenodd"
+      sketch:type="MSPage"
+    >
+      <path
+        [attr.id]="arrow.ref"
+        class="path"
+        fill="none"
+        [attr.stroke]="arrow.color"
+        stroke-width="5"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+        [attr.d]="arrow.path"
+      />
+
+      <path *ngIf="arrow.is_dashed"
+        class="dashed"
+        fill="none"
+        stroke="white"
+        stroke-width="8"
+        stroke-linejoin="round"
+        stroke-miterlimit="10"
+        [attr.d]="arrow.path"
+      />
+
+      <polyline id="arrow" points="0,-9 18,0 0,9 5,0" [attr.fill]="arrow.color">
+        <animateMotion
+          rotate="auto"
+          begin="1s"
+          [attr.dur]="arrow.dur"
+          repeatCount="1"
+          fill="freeze"
+        >
+          <mpath [attr.xlink:href]="arrow.href"></mpath>
+        </animateMotion>
+      </polyline>
+    </g>
+  </svg>
+  <p id="text" [attr.style]="arrow.style">{{arrow.text}}</p>
+</div>
+
