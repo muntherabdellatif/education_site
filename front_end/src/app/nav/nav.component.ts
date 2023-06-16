@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { faMagnifyingGlass, faBurst, faUser, faMoon, faBell, faRightFromBracket, faRightToBracket, faAddressCard, faPenToSquare, faGear} from '@fortawesome/free-solid-svg-icons';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { faMagnifyingGlass, faBurst, faUser, faMoon, faBell, faRightFromBracket, faRightToBracket, faSun, faPenToSquare, faGear} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav',
@@ -7,8 +7,12 @@ import { faMagnifyingGlass, faBurst, faUser, faMoon, faBell, faRightFromBracket,
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
+  @Output() dataEvent = new EventEmitter<string>();
+
   isToggleOn = false;
   showUserPopup = false;
+
+  CurrentTheme: "theme-light" | "theme-dark" = "theme-light";
 
   isLogin = false; // todo take it from backend
   isAdmin = false; // todo take it from backend
@@ -20,8 +24,11 @@ export class NavComponent {
   faBurst = faBurst;
   faMagnifyingGlass = faMagnifyingGlass;
   faUser = faUser;
+  faSun = faSun;
   faMoon = faMoon;
   faBell = faBell;
+
+  constructor(){}
 
   toggleSearch() {
     this.isToggleOn= ! this.isToggleOn;
@@ -29,5 +36,15 @@ export class NavComponent {
 
   toggleUserPopup() {
     this.showUserPopup = ! this.showUserPopup;
+  }
+
+  changeTheme() {
+    if (this.CurrentTheme === "theme-dark") {
+      this.CurrentTheme = "theme-light"
+      this.dataEvent.emit("theme-light");
+    } else {
+      this.CurrentTheme = "theme-dark";
+      this.dataEvent.emit("theme-dark");
+    }
   }
 }

@@ -1,6 +1,6 @@
-<app-nav></app-nav>
-<app-road [arrows]="arrows"></app-road>
-<div class="pages-container">
+<div class="pages-container" [ngClass]="{ 'theme-light': activeTheme === 'theme-light', 'theme-dark': activeTheme === 'theme-dark' }">
+  <app-nav (dataEvent)="receiveData($event)"></app-nav>
+  <app-road [arrows]="arrows"></app-road>
   <router-outlet></router-outlet>
 </div>
 

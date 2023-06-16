@@ -7,6 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'front_end';
+  activeTheme: 'theme-light' | 'theme-dark' = 'theme-light';
+
+  receiveData(data: string) {
+    if (data == 'theme-light' || data == 'theme-dark')
+      this.activeTheme = data;
+  }
+
   arrows: any = [
   {
     ref: "Path-1",
