@@ -83,15 +83,36 @@ nav {
 
   }
 
+  @media screen and (max-width: 900px) {
+    .search_container {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      min-width: 400px;
+    }
+    .search_container.active {
+      display: block;
+    }
+  }
+
   .icon_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 173px;
+
     .icon {
       font-size: 25px;
       cursor: pointer;
       color: $main_text_color_light_mode;
+    }
+
+    @media screen and (min-width: 900px) {
+      .icon.small-screen {
+        display: none;
+      }
     }
   }
 

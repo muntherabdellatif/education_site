@@ -5,7 +5,7 @@
     </span>
     <h1>Our  Site Name</h1>
   </span>
-  <span class="search_container">
+  <span class="search_container" [class.active]="isToggleOn">
     <input type="text" class="search-input" placeholder="Search">
     <fa-icon class="icon" [icon]="faMagnifyingGlass"></fa-icon>
     <select class="optionSelect" id="cars" name="cars">
@@ -16,6 +16,7 @@
     </select>
   </span>
   <span class="icon_container">
+    <fa-icon class="icon small-screen" [icon]="faMagnifyingGlass" (click)="toggleSearch()"></fa-icon>
     <fa-icon class="icon" [icon]="faBell"></fa-icon>
     <fa-icon class="icon" [icon]="faMoon"></fa-icon>
     <fa-icon class="icon" [icon]="faUser"></fa-icon>
