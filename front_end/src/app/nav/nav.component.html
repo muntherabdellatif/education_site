@@ -1,5 +1,5 @@
 <nav>
-  <span class="log_container">
+  <span class="log_container" routerLink="/">
     <span class="logo">
       <fa-icon [icon]="faBurst"></fa-icon>
     </span>
@@ -19,6 +19,28 @@
     <fa-icon class="icon small-screen" [icon]="faMagnifyingGlass" (click)="toggleSearch()"></fa-icon>
     <fa-icon class="icon" [icon]="faBell"></fa-icon>
     <fa-icon class="icon" [icon]="faMoon"></fa-icon>
-    <fa-icon class="icon" [icon]="faUser"></fa-icon>
+    <fa-icon class="icon" [icon]="faUser" (click)="toggleUserPopup()"></fa-icon>
   </span>
+  <div class="user-popup" *ngIf="showUserPopup">
+    <div class="link" *ngIf="isLogin">
+      <fa-icon class="icon" [icon]="faUser"></fa-icon>
+      <p>الصفحة الشخصية</p>
+    </div>
+    <div class="link" *ngIf="isLogin">
+      <fa-icon class="icon" [icon]="faRightFromBracket"></fa-icon>
+      <p>تسجيل الخروج</p>
+    </div>
+    <div class="link" *ngIf="!isLogin">
+      <fa-icon class="icon" [icon]="faRightToBracket"></fa-icon>
+      <p>تسجيل الدخول</p>
+    </div>
+    <div class="link" *ngIf="!isLogin">
+      <fa-icon class="icon" [icon]="faPenToSquare"></fa-icon>
+      <p>إنشاء حساب</p>
+    </div>
+    <div class="link" *ngIf="isLogin && isAdmin">
+      <fa-icon class="icon" [icon]="faGear"></fa-icon>
+      <p>الإعدادات و التحكم</p>
+    </div>
+  </div>
 </nav>

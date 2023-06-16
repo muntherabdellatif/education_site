@@ -116,5 +116,39 @@ nav {
     }
   }
 
+  .user-popup {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 8px 0 black;
 
+    .link {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      flex-direction: row-reverse;
+      border-bottom: 1px solid;
+      width: 140px;
+      padding: 10px;
+      cursor: pointer;
+
+      .icon {
+
+      }
+
+      p {
+        margin: 0 10px 0 0;
+      }
+    }
+
+    .link:last-child {
+      border: none;
+    }
+
+    .link:hover .icon{
+      font-size: 18px;
+    }
+  }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faMagnifyingGlass, faBurst, faUser, faMoon, faBell} from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faBurst, faUser, faMoon, faBell, faRightFromBracket, faRightToBracket, faAddressCard, faPenToSquare, faGear} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-nav',
@@ -8,6 +8,15 @@ import { faMagnifyingGlass, faBurst, faUser, faMoon, faBell} from '@fortawesome/
 })
 export class NavComponent {
   isToggleOn = false;
+  showUserPopup = false;
+
+  isLogin = false; // todo take it from backend
+  isAdmin = false; // todo take it from backend
+
+  faGear = faGear;
+  faPenToSquare = faPenToSquare;
+  faRightToBracket = faRightToBracket;
+  faRightFromBracket = faRightFromBracket;
   faBurst = faBurst;
   faMagnifyingGlass = faMagnifyingGlass;
   faUser = faUser;
@@ -16,5 +25,9 @@ export class NavComponent {
 
   toggleSearch() {
     this.isToggleOn= ! this.isToggleOn;
+  }
+
+  toggleUserPopup() {
+    this.showUserPopup = ! this.showUserPopup;
   }
 }
