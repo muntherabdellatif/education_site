@@ -1,0 +1,38 @@
+[
+  {
+    "name": "الجامعة الاردنية",
+    "location": "عمان، شارع الاميرة رانيا",
+    "image": null,
+    "rate": 4,
+    "fans": 170,
+    "is_liked": true,
+    "government_or_private": "حكومية"
+  },
+  {
+    "name": "الجامعة الهاشمية",
+    "location": "محيط مدينة الزرقاء",
+    "image": null,
+    "rate": 3.2,
+    "fans": 250,
+    "is_liked": false,
+    "government_or_private": "حكومية"
+  },
+  {
+    "name": "الجامعة الالمانية",
+    "location": "المشقر في لواء ناعور",
+    "image": null,
+    "rate": 5,
+    "fans": 12,
+    "is_liked": false,
+    "government_or_private": "خاصة"
+  },
+  {
+    "name": "عمان الاهلية",
+    "location": "شارع السلط ، المديري ، البلقاء",
+    "image": null,
+    "rate": 4,
+    "fans": 170,
+    "is_liked": true,
+    "government_or_private": "خاصة"
+  }
+]

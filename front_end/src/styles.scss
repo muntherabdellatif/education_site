@@ -2,6 +2,10 @@
 // ---- google font ----
 @import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
 
+body {
+  margin: 0;
+}
+
 // ---- main variables ----
 $color1: #ffffff;
 $color2: #E4E4E6;
@@ -23,6 +27,8 @@ $input-icon-color: $color3;
 
 // ---- main style ----
 .theme-light {
+  padding: 0;
+  margin: 0;
   // text
   .primary-text {
     color: #000000;
@@ -38,14 +44,21 @@ $input-icon-color: $color3;
     background-color: #ffff;
   }
   .secondary-back-ground {
-    background-color: #E4E4E6;
+    background-color: #e4e4e65d;
   }
-  .tertiary-back-ground {
-    background-color: #CBCAD0;
+  .table-head {
+    background-color: $color5;
+    color: $color1;
+  }
+  .table-body {
+    background-color: $color1;
+    color: $color5;
   }
 }
 
 .theme-dark {
+  padding: 0;
+  margin: 0;
   // text
   .primary-text {
     color: #ffff;
@@ -54,16 +67,21 @@ $input-icon-color: $color3;
     color: #E4E4E6;
   }
   .tertiary-text {
-    color: #CBCAD0;
+    color: #000000;
   }
   // back ground
   .primary-back-ground {
     background-color: #000000;
   }
   .secondary-back-ground {
-    background-color: #444152;
-  }
-  .tertiary-back-ground {
     background-color: #8E8AA5;
+  }
+  .table-head {
+    background-color: $color6;
+    color: $color1;
+  }
+  .table-body {
+    background-color: $color5;
+    color: #E4E4E6;
   }
 }

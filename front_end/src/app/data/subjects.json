@@ -1,0 +1,64 @@
+[
+  {
+    "name": "برمجة كائنية التوجه oop",
+    "university": 0,
+    "major": 0,
+    "description": "وتعد OOP من المنهجيات الشائعة في البرمجة الحاسوبية ويتم استخدامها في تطوير العديد من التطبيقات المختلفة مثل البرامج الحاسوبية وتطبيقات الجوال وألعاب الفيديو والعديد من الأنظمة الحاسوبية الكبيرة.",
+    "subjects": [
+      "مفهوم البرمجة الشيئية وما هي مزاياها وأهميتها في تطوير البرامج.",
+      "الكائنات والفئات وكيفية تمثيلها في البرمجة الشيئية.",
+      "تصميم الفئات والكائنات وتحديد خصائصها وأساليبها وكيفية الوصول إليها.",
+      "المبادئ الأساسية للتراث الشيئي (Inheritance) وكيفية استخدامها لإنشاء هيكلية برامج متينة.",
+      "المبادئ الأساسية للتجميع (Composition) وكيفية استخدامها لتصميم برامج متكاملة."
+      ],
+    "compulsory_or_optional": "إجباري",
+    "hours": 3,
+    "lab_or_lectures": "lectures",
+    "prerequisite": 1,
+    "rate": 4,
+    "fans": 170,
+    "is_liked": true
+  },
+  {
+    "name": "أساسايات البرمجة بال c++",
+    "university": 0,
+    "major": 0,
+    "description": "",
+    "subjects": [],
+    "compulsory_or_optional": "إجباري",
+    "hours": 3,
+    "lab_or_lectures": "lectures",
+    "prerequisite": 2,
+    "rate": 4,
+    "fans": 170,
+    "is_liked": true
+  },
+  {
+    "name": "1 مهارات حلسوب",
+    "university": 0,
+    "major": 0,
+    "description": "",
+    "subjects": [],
+    "compulsory_or_optional": "إجباري",
+    "hours": 3,
+    "lab_or_lectures": "lectures",
+    "prerequisite": null,
+    "rate": 4,
+    "fans": 170,
+    "is_liked": true
+  },
+  {
+    "name": "علم نفس",
+    "university": 0,
+    "major": 0,
+    "description": "",
+    "subjects": [],
+    "compulsory_or_optional": "إختياري",
+    "hours": 3,
+    "lab_or_lectures": "lectures",
+    "prerequisite": null,
+    "rate": 4,
+    "fans": 170,
+    "is_liked": true
+  }
+]
