@@ -5,17 +5,14 @@
     </span>
     <h1 class="primary-text">Our  Site Name</h1>
   </span>
-  <span class="search_container" [class.active]="isToggleOn">
-    <input type="text" class="search-input" placeholder="Search">
+  <form class="search_container" [class.active]="isOpenSearchBar" (submit)="openSearchPage($event)">
+    <input type="text" class="search-input" placeholder="Search" #searchInput>
     <fa-icon class="icon tertiary-text" [icon]="faMagnifyingGlass"></fa-icon>
-    <select class="optionSelect" id="cars" name="cars">
-      <option value="volvo">الجامعات</option>
-      <option value="saab">التخصصات</option>
-      <option value="fiat">الدورات و المصادر</option>
-      <option value="audi">المواد الدراسية</option>
-      <option value="audi">مجالات العمل</option>
-    </select>
-  </span>
+    <div class="optionSelect" (click)="toggleSearchOption()">{{selectedOption.name}}</div>
+    <div class="option_container" *ngIf="isOpenSelectionOption">
+      <div *ngFor="let option of searchOption" [id]="option.value" class="option" (click)="selectOption($event)">{{option.name}}</div>
+    </div>
+  </form>
   <span class="icon_container">
     <fa-icon class="icon small-screen primary-text" [icon]="faMagnifyingGlass" (click)="toggleSearch()"></fa-icon>
     <fa-icon class="icon primary-text" [icon]="faBell"></fa-icon>

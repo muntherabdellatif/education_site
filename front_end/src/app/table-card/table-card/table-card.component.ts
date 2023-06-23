@@ -1,8 +1,4 @@
-import { Component } from '@angular/core';
-import * as linksData from '../../data/links.json';
-import * as majorsData from '../../data/majors.json';
-import * as subjectsData from '../../data/subjects.json';
-import * as universitiesData from '../../data/universities.json';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-table-card',
@@ -10,45 +6,33 @@ import * as universitiesData from '../../data/universities.json';
   styleUrls: ['./table-card.component.scss']
 })
 export class TableCardComponent {
-  links = linksData;
-  majors = majorsData;
-  subjects = subjectsData;
-  universities = universitiesData;
+  @Input() data: any;
+  @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" = "links";
 
-  linkTable: any;
-  majorsTable: any;
-  subjectsTable: any;
-  universitiesTable: any;
+  tableData: any;
 
-  dataType: "links" | "majors" | "subjects" | "universities" | "workingFields"= "links";
-  tableData = {
-    links: ["name","source","major","subject" ],
+  tablesData = {
+    links: ["name","source","major","subject"],
     majors: ["name","university","hours","competitive_prise","not_competitive_prise","classification"],
     subjects: ["name","major","university","compulsory_or_optional","hours","prerequisite"],
     universities: ["name","location","government_or_private"],
     workingFields: [],
   }
 
-  constructor(){
-    this.linkTable = this.formatTableData(this.links);
-    this.dataType = "majors";
-    this.majorsTable = this.formatTableData(this.majors);
-    this.dataType = "subjects";
-    this.subjectsTable = this.formatTableData(this.subjects);
-    this.dataType = "universities";
-    this.universitiesTable = this.formatTableData(this.universities);
+  ngOnInit(){
+    this.tableData = this.formatTableData(this.data);
   }
 
   formatTableData(data:any){
-    const columns = this.tableData[this.dataType];
-    let tableData: any[][] = [];
+    const columns = this.tablesData[this.dataType];
+    let tablesData: any[][] = [];
     for(let i=0 ; i< data.length; i++){
       let rowData: any[] = [];
       columns.forEach((d)=>{
         rowData.push(data[i][d]);
       })
-      tableData.push(rowData);
+      tablesData.push(rowData);
     }
-    return {columns,tableData}
+    return {columns,tablesData}
   }
 }

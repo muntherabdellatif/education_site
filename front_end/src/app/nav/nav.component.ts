@@ -1,5 +1,6 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { faMagnifyingGlass, faBurst, faUser, faMoon, faBell, faRightFromBracket, faRightToBracket, faSun, faPenToSquare, faGear} from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -8,11 +9,21 @@ import { faMagnifyingGlass, faBurst, faUser, faMoon, faBell, faRightFromBracket,
 })
 export class NavComponent {
   @Output() dataEvent = new EventEmitter<string>();
+  @ViewChild('searchInput', { static: false }) searchInputRef: ElementRef | undefined;
 
-  isToggleOn = false;
+  isOpenSearchBar = false;
   showUserPopup = false;
+  isOpenSelectionOption = false;
 
   CurrentTheme: "theme-light" | "theme-dark" = "theme-light";
+  searchOption = [
+    {name: "الجامعات", value: "universities" },
+    {name: "التخصصات", value: "majors" },
+    {name: "المواد", value: "subjects" },
+    {name: "مجالات العمل", value: "working-fields" },
+    {name: "مصادر التعلم", value: "links" },
+  ]
+  selectedOption = this.searchOption[4];
 
   isLogin = false; // todo take it from backend
   isAdmin = false; // todo take it from backend
@@ -28,14 +39,33 @@ export class NavComponent {
   faMoon = faMoon;
   faBell = faBell;
 
-  constructor(){}
+  constructor(private router: Router){}
 
   toggleSearch() {
-    this.isToggleOn= ! this.isToggleOn;
+    this.isOpenSearchBar= ! this.isOpenSearchBar;
   }
 
   toggleUserPopup() {
     this.showUserPopup = ! this.showUserPopup;
+  }
+
+  toggleSearchOption() {
+    this.isOpenSelectionOption = !this.isOpenSelectionOption;
+  }
+
+  selectOption($event : Event) {
+    const selectedValue = ($event.target as HTMLElement)?.id;
+    const selectedOption = this.searchOption.find((option)=> option.value == selectedValue);
+    this.selectedOption = selectedOption ? selectedOption : this.selectedOption;
+    this.isOpenSelectionOption = false;
+  }
+
+  openSearchPage($event : Event) {
+    $event.preventDefault();
+    let searchValue = '';
+    if (this.searchInputRef)
+      searchValue = this.searchInputRef.nativeElement.value;
+    this.router.navigate([`/${this.selectedOption.value}`], { queryParams: { search_value: searchValue }});
   }
 
   changeTheme() {

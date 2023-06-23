@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { RoadComponent } from './road/road.component';
 import { HomeComponent } from './home/home.component';
 import { UserPageComponent } from './user-page/user-page.component';
+import { SearchPagesModule } from './search_pages/search-pages.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UserPageComponent } from './user-page/user-page.component';
     BrowserModule,
     FontAwesomeModule,
     TableCardModule,
+    SearchPagesModule,
     AppRoutingModule
   ],
   providers: [],
