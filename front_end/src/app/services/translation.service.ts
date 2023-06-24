@@ -21,7 +21,6 @@ export class TranslationService {
     pathArray.forEach(point => {
       result = result[point];
     })
-    console.log("result :", result);
     return result;
   }
 

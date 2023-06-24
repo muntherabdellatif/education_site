@@ -7,7 +7,7 @@ import { SubjectsComponent } from './subjects/subjects.component';
 import { LinksComponent } from './links/links.component';
 import { MajorsComponent } from './majors/majors.component';
 import { TableCardModule } from '../table-card/table-card.module';
-import { TranslationPipe } from '../pipes/translation.pipe';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     UniversitiesComponent,
@@ -15,12 +15,12 @@ import { TranslationPipe } from '../pipes/translation.pipe';
     LinksComponent,
     WorkingFieldsComponent,
     MajorsComponent,
-    TranslationPipe,
   ],
   imports: [
     CommonModule,
     SearchPagesRoutingModule,
     TableCardModule,
+    SharedModule
   ],
   exports: [
     UniversitiesComponent,
@@ -28,7 +28,6 @@ import { TranslationPipe } from '../pipes/translation.pipe';
     LinksComponent,
     WorkingFieldsComponent,
     MajorsComponent,
-    TranslationPipe
   ]
 })
 export class SearchPagesModule { }

@@ -9,7 +9,7 @@ import { RoadComponent } from './road/road.component';
 import { HomeComponent } from './home/home.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { SearchPagesModule } from './search_pages/search-pages.module';
-
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +23,8 @@ import { SearchPagesModule } from './search_pages/search-pages.module';
     FontAwesomeModule,
     TableCardModule,
     SearchPagesModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

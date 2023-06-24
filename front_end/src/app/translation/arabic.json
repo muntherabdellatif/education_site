@@ -16,5 +16,37 @@
     "login": "تسجيل الدخول",
     "register" : "إنشاء حساب",
     "sitting_and_control": "الإعدادات و التحكم"
+  },
+  "tables": {
+    "links": {
+      "name": "إسم الكورس أو المقالة",
+      "source": "المصدر",
+      "major": "التخصص الجامعي",
+      "subject": "المادة الدراسية"
+    },
+    "majors": {
+      "name": "إسم التخصص",
+      "university": "إسم الجامعة",
+      "hours": "عدد الساعات",
+      "competitive_prise": "سعر الساعة تنافسي",
+      "not_competitive_prise": "عدد الساعات موازي",
+      "classification": "التصنيف"
+    },
+    "subjects": {
+      "name" : "اسم المادة الدراسية",
+      "major": "التخصص",
+      "university": "الجامعة",
+      "compulsory_or_optional": "إجبارية أم إختيارية",
+      "hours": "عدد الساعات",
+      "prerequisite": "متتطلب سابق"
+    },
+    "universities": {
+      "name": "إسم الجامعة",
+      "location": "الموقع",
+      "government_or_private": "حكومية أم خاصة"
+    },
+    "workingFields": {
+      "name": ""
+    }
   }
 }

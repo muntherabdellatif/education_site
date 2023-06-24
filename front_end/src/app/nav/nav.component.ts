@@ -1,7 +1,7 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
 import { faMagnifyingGlass, faBurst, faUser, faMoon, faBell, faRightFromBracket, faRightToBracket, faSun, faPenToSquare, faGear, faLanguage} from '@fortawesome/free-solid-svg-icons';
-import { Router } from '@angular/router';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -51,7 +51,14 @@ export class NavComponent {
   faBell = faBell;
   faLanguage = faLanguage;
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private location: Location){}
+
+  ngOnInit() {
+    const url = this.location.path();
+    const link = url.substr(url.lastIndexOf('/') + 1).split("?")[0];
+    const selectedOption = this.searchOption.find((option) => option.value == link);
+    this.selectedOption = selectedOption ? selectedOption : this.selectedOption;
+  }
 
   toggleSearch() {
     this.isOpenSearchBar= !this.isOpenSearchBar;

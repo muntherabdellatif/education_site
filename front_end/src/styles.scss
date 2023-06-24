@@ -97,6 +97,10 @@ $input-icon-color: $color3;
   .text-align-lang {
     text-align: end !important;
   }
+
+  .table-lang {
+    direction: rtl;
+  }
 }
 
 .english-lang {
@@ -109,6 +113,10 @@ $input-icon-color: $color3;
 
   .text-align-lang {
     text-align: start !important;
+  }
+
+  .table-lang {
+    direction: ltr;
   }
 }
 

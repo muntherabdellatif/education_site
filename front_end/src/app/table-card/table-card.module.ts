@@ -3,22 +3,21 @@ import { CommonModule } from '@angular/common';
 import { TableComponent } from './table/table.component';
 import { CardComponent } from './card/card.component';
 import { TableCardComponent } from './table-card/table-card.component';
-import { TranslationPipe } from '../pipes/translation.pipe';
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     TableComponent,
     CardComponent,
     TableCardComponent,
-    TranslationPipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule,
   ],
   exports: [
     TableComponent,
     CardComponent,
     TableCardComponent,
-    TranslationPipe
   ]
 })
 export class TableCardModule { }

@@ -16,5 +16,37 @@
     "login": "Login",
     "register" : "Register",
     "sitting_and_control": "Sitting"
+  },
+  "tables": {
+    "links": {
+      "name": "The name of the course or article",
+      "source": "Resource",
+      "major": "major",
+      "subject": "subject"
+    },
+    "majors": {
+      "name": "Major name",
+      "university": "University",
+      "hours": "Number of hours",
+      "competitive_prise": "Competitive prise",
+      "not_competitive_prise": "Not competitive prise",
+      "classification": "Classification"
+    },
+    "subjects": {
+      "name" : "Subject name",
+      "major": "Major",
+      "university": "University",
+      "compulsory_or_optional": "Compulsory/Optional",
+      "hours": "Number of hours",
+      "prerequisite": "Prerequisite"
+    },
+    "universities": {
+      "name": "University name",
+      "location": "location",
+      "government_or_private": "Government/Private"
+    },
+    "workingFields": {
+      "name": ""
+    }
   }
 }
