@@ -12,10 +12,33 @@ export class TableCardComponent {
   tableData: any;
 
   tablesData = {
-    links: ["name","source","major","subject"],
-    majors: ["name","university","hours","competitive_prise","not_competitive_prise","classification"],
-    subjects: ["name","major","university","compulsory_or_optional","hours","prerequisite"],
-    universities: ["name","location","government_or_private"],
+    links: [
+      {name: "name" , value: "name"},
+      {name: "source" , value: "source"},
+      {name: "major" , value: "major"},
+      {name: "subject" , value: "subject"},
+    ],
+    majors: [
+      {name: "name" , value: "name"},
+      {name: "university" , value: "university"},
+      {name: "hours" , value: "hours"},
+      {name: "competitive_prise" , value: "competitive_prise"},
+      {name: "not_competitive_prise" , value: "not_competitive_prise"},
+      {name: "classification" , value: "classification"},
+    ],
+    subjects: [
+      {name: "name" , value: "name"},
+      {name: "major" , value: "major"},
+      {name: "university" , value: "university"},
+      {name: "compulsory_or_optional" , value: "compulsory_or_optional"},
+      {name: "hours" , value: "hours"},
+      {name: "prerequisite" , value: "prerequisite"},
+    ],
+    universities: [
+      {name: "name" , value: "name"},
+      {name: "location" , value: "location"},
+      {name: "government_or_private" , value: "government_or_private"},
+    ],
     workingFields: [],
   }
 
@@ -29,7 +52,7 @@ export class TableCardComponent {
     for(let i=0 ; i< data.length; i++){
       let rowData: any[] = [];
       columns.forEach((d)=>{
-        rowData.push(data[i][d]);
+        rowData.push(data[i][d.value]);
       })
       tablesData.push(rowData);
     }

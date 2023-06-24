@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "site_name": "Our Site Name",
+    "search_options": {
+      "universities": "Universities",
+      "majors": "Majors",
+      "subjects": "Subjects" ,
+      "working-fields": "Working fields",
+      "links": "Resources"
+    },
+    "arabic": "Arabic",
+    "english": "English",
+    "search": "Search here",
+    "user_page": "My page",
+    "logout": "Logout",
+    "login": "Login",
+    "register" : "Register",
+    "sitting_and_control": "Sitting"
+  }
+}

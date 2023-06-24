@@ -1,0 +1,20 @@
+{
+  "nav": {
+    "site_name": "إسم الموقع",
+    "search_options": {
+      "universities": "الجامعات",
+      "majors": "التخصصات",
+      "subjects": "المواد" ,
+      "working-fields": "مجالات العمل",
+      "links": "المصادر"
+    },
+    "arabic": "العربية",
+    "english": "الإنجليزية",
+    "search": "إبحث هنا",
+    "user_page": "الصفحة الشخصية",
+    "logout": "تسجيل الخروج",
+    "login": "تسجيل الدخول",
+    "register" : "إنشاء حساب",
+    "sitting_and_control": "الإعدادات و التحكم"
+  }
+}

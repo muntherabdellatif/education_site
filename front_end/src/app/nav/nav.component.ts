@@ -1,5 +1,5 @@
 import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
-import { faMagnifyingGlass, faBurst, faUser, faMoon, faBell, faRightFromBracket, faRightToBracket, faSun, faPenToSquare, faGear} from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faBurst, faUser, faMoon, faBell, faRightFromBracket, faRightToBracket, faSun, faPenToSquare, faGear, faLanguage} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,21 +8,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav.component.scss']
 })
 export class NavComponent {
-  @Output() dataEvent = new EventEmitter<string>();
+  @Output() theme = new EventEmitter<string>();
+  @Output() language = new EventEmitter<string>();
+
   @ViewChild('searchInput', { static: false }) searchInputRef: ElementRef | undefined;
 
   isOpenSearchBar = false;
   showUserPopup = false;
+  showLanguagePopup = false;
   isOpenSelectionOption = false;
 
-  CurrentTheme: "theme-light" | "theme-dark" = "theme-light";
+  currentTheme: "theme-light" | "theme-dark" = "theme-light";
+  currentLanguage: 'arabic' | 'english' = 'arabic';
+
   searchOption = [
-    {name: "الجامعات", value: "universities" },
-    {name: "التخصصات", value: "majors" },
-    {name: "المواد", value: "subjects" },
-    {name: "مجالات العمل", value: "working-fields" },
-    {name: "مصادر التعلم", value: "links" },
-  ]
+    {name: "nav.search_options.universities", value: "universities" },
+    {name: "nav.search_options.majors", value: "majors" },
+    {name: "nav.search_options.subjects", value: "subjects" },
+    {name: "nav.search_options.working-fields", value: "working-fields" },
+    {name: "nav.search_options.links", value: "links" },
+  ];
+
+  languageOption = [
+    {name: 'nav.arabic', value: 'arabic'},
+    {name: 'nav.english', value: 'english'}
+  ];
+
   selectedOption = this.searchOption[4];
 
   isLogin = false; // todo take it from backend
@@ -38,15 +49,20 @@ export class NavComponent {
   faSun = faSun;
   faMoon = faMoon;
   faBell = faBell;
+  faLanguage = faLanguage;
 
   constructor(private router: Router){}
 
   toggleSearch() {
-    this.isOpenSearchBar= ! this.isOpenSearchBar;
+    this.isOpenSearchBar= !this.isOpenSearchBar;
   }
 
   toggleUserPopup() {
-    this.showUserPopup = ! this.showUserPopup;
+    this.showUserPopup = !this.showUserPopup;
+  }
+
+  toggleLanguagePopup() {
+    this.showLanguagePopup = !this.showLanguagePopup;
   }
 
   toggleSearchOption() {
@@ -60,6 +76,18 @@ export class NavComponent {
     this.isOpenSelectionOption = false;
   }
 
+  selectLanguage($event : Event) {
+    const selectedValue = ($event.currentTarget as HTMLElement)?.id;
+    if (selectedValue === "arabic") {
+      this.currentLanguage = "arabic"
+      this.language.emit("arabic");
+    } else {
+      this.currentLanguage = "english";
+      this.language.emit("english");
+    }
+    this.showLanguagePopup = false;
+  }
+
   openSearchPage($event : Event) {
     $event.preventDefault();
     let searchValue = '';
@@ -69,12 +97,12 @@ export class NavComponent {
   }
 
   changeTheme() {
-    if (this.CurrentTheme === "theme-dark") {
-      this.CurrentTheme = "theme-light"
-      this.dataEvent.emit("theme-light");
+    if (this.currentTheme === "theme-dark") {
+      this.currentTheme = "theme-light"
+      this.theme.emit("theme-light");
     } else {
-      this.CurrentTheme = "theme-dark";
-      this.dataEvent.emit("theme-dark");
+      this.currentTheme = "theme-dark";
+      this.theme.emit("theme-dark");
     }
   }
 }

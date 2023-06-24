@@ -1,7 +1,7 @@
 <table class="rtl-table">
   <thead class="table-head">
     <tr>
-      <th *ngFor="let column of table.columns">{{column}}</th>
+      <th *ngFor="let column of table.columns">{{column.name | translation}}</th>
     </tr>
   </thead>
   <tbody class="table-body">

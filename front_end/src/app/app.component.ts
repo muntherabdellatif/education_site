@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { TranslationService } from './services/translation.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,10 +9,35 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'front_end';
   activeTheme: 'theme-light' | 'theme-dark' = 'theme-light';
+  activeLanguage: 'arabic' | 'english' = 'arabic';
+  isHome = false;
 
-  receiveData(data: string) {
+  constructor(private translation: TranslationService,private router: Router){}
+
+  ngOnInit() {
+    const theme = localStorage.getItem("theme");
+    const language = localStorage.getItem("language");
+    if (theme && (theme === 'theme-light' || theme === 'theme-dark')) {
+      this.activeTheme = theme;
+    }
+    if (language && (language === 'arabic' || language === 'english')) {
+      this.activeLanguage = language;
+      this.translation.setLanguage(this.activeLanguage);
+    }
+  }
+
+  changeTheme(data: string) {
     if (data == 'theme-light' || data == 'theme-dark')
       this.activeTheme = data;
+    localStorage.setItem('theme', this.activeTheme);
+  }
+
+  changeLanguage(data: string) {
+    if (data == 'arabic' || data == 'english') {
+      this.translation.setLanguage(this.activeLanguage);
+      this.activeLanguage = data;
+    }
+    localStorage.setItem('language', this.activeLanguage);
   }
 
   arrows: any = [

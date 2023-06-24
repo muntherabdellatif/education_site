@@ -7,26 +7,28 @@ import { SubjectsComponent } from './subjects/subjects.component';
 import { LinksComponent } from './links/links.component';
 import { MajorsComponent } from './majors/majors.component';
 import { TableCardModule } from '../table-card/table-card.module';
-
+import { TranslationPipe } from '../pipes/translation.pipe';
 @NgModule({
   declarations: [
     UniversitiesComponent,
     SubjectsComponent,
     LinksComponent,
     WorkingFieldsComponent,
-    MajorsComponent
+    MajorsComponent,
+    TranslationPipe,
   ],
   imports: [
     CommonModule,
     SearchPagesRoutingModule,
-    TableCardModule
+    TableCardModule,
   ],
   exports: [
     UniversitiesComponent,
     SubjectsComponent,
     LinksComponent,
     WorkingFieldsComponent,
-    MajorsComponent
+    MajorsComponent,
+    TranslationPipe
   ]
 })
 export class SearchPagesModule { }

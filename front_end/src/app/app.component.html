@@ -1,7 +1,8 @@
-<div [ngClass]="{ 'theme-light': activeTheme === 'theme-light', 'theme-dark': activeTheme === 'theme-dark' }">
-  <app-nav (dataEvent)="receiveData($event)"></app-nav>
-  <div class="pages-container secondary-back-ground">
-    <router-outlet></router-outlet>
+<div [ngClass]="{ 'arabic-lang': activeLanguage === 'arabic', 'english-lang': activeLanguage === 'english' }">
+  <div [ngClass]="{ 'theme-light': activeTheme === 'theme-light', 'theme-dark': activeTheme === 'theme-dark' }">
+    <app-nav (theme)="changeTheme($event)" (language)="changeLanguage($event)"></app-nav>
+    <div class="pages-container secondary-back-ground">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
-

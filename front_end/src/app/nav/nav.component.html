@@ -1,45 +1,53 @@
-<nav class="primary-back-ground">
-  <span class="log_container" routerLink="/">
-    <span class="logo primary-text">
-      <fa-icon [icon]="faBurst"></fa-icon>
-    </span>
-    <h1 class="primary-text">Our  Site Name</h1>
-  </span>
-  <form class="search_container" [class.active]="isOpenSearchBar" (submit)="openSearchPage($event)">
-    <input type="text" class="search-input" placeholder="Search" #searchInput>
-    <fa-icon class="icon tertiary-text" [icon]="faMagnifyingGlass"></fa-icon>
-    <div class="optionSelect" (click)="toggleSearchOption()">{{selectedOption.name}}</div>
-    <div class="option_container" *ngIf="isOpenSelectionOption">
-      <div *ngFor="let option of searchOption" [id]="option.value" class="option" (click)="selectOption($event)">{{option.name}}</div>
-    </div>
-  </form>
+<nav class="primary-back-ground flex-lang">
   <span class="icon_container">
     <fa-icon class="icon small-screen primary-text" [icon]="faMagnifyingGlass" (click)="toggleSearch()"></fa-icon>
     <fa-icon class="icon primary-text" [icon]="faBell"></fa-icon>
-    <fa-icon class="icon primary-text" [icon]="faMoon" *ngIf="CurrentTheme == 'theme-light'" (click)="changeTheme()"></fa-icon>
-    <fa-icon class="icon primary-text" [icon]="faSun" *ngIf="CurrentTheme == 'theme-dark'" (click)="changeTheme()"></fa-icon>
+    <fa-icon class="icon primary-text" [icon]="faLanguage" (click)="toggleLanguagePopup()"></fa-icon>
+    <fa-icon class="icon primary-text" [icon]="faMoon" *ngIf="currentTheme == 'theme-light'" (click)="changeTheme()"></fa-icon>
+    <fa-icon class="icon primary-text" [icon]="faSun" *ngIf="currentTheme == 'theme-dark'" (click)="changeTheme()"></fa-icon>
     <fa-icon class="icon primary-text" [icon]="faUser" (click)="toggleUserPopup()"></fa-icon>
+    <div class="user-popup" *ngIf="showUserPopup">
+      <div class="link" *ngIf="isLogin">
+        <fa-icon class="icon" [icon]="faUser"></fa-icon>
+        <p>{{"nav.user_page" | translation}}</p>
+      </div>
+      <div class="link" *ngIf="isLogin">
+        <fa-icon class="icon" [icon]="faRightFromBracket"></fa-icon>
+        <p>{{"nav.logout" | translation}}</p>
+      </div>
+      <div class="link" *ngIf="!isLogin">
+        <fa-icon class="icon" [icon]="faRightToBracket"></fa-icon>
+        <p>{{"nav.login" | translation}}</p>
+      </div>
+      <div class="link" *ngIf="!isLogin">
+        <fa-icon class="icon" [icon]="faPenToSquare"></fa-icon>
+        <p>{{"nav.register" | translation}}</p>
+      </div>
+      <div class="link" *ngIf="isLogin && isAdmin">
+        <fa-icon class="icon" [icon]="faGear"></fa-icon>
+        <p>{{"nav.sitting_and_control" | translation}}</p>
+      </div>
+    </div>
+    <div class="language-popup" *ngIf="showLanguagePopup">
+      <div class="language" [id]="lang.value" *ngFor="let lang of languageOption" (click)="selectLanguage($event)">
+        <p>{{lang.name | translation}}</p>
+      </div>
+    </div>
   </span>
-  <div class="user-popup" *ngIf="showUserPopup">
-    <div class="link" *ngIf="isLogin">
-      <fa-icon class="icon" [icon]="faUser"></fa-icon>
-      <p>الصفحة الشخصية</p>
+  <form class="search_container flex-lang" [class.active]="isOpenSearchBar" (submit)="openSearchPage($event)">
+    <input type="text" class="search-input text-align-lang" [placeholder]="'nav.search' | translation" #searchInput>
+    <fa-icon class="icon tertiary-text" [icon]="faMagnifyingGlass"></fa-icon>
+    <div class="option_select_container">
+      <div class="optionSelect text-align-lang" (click)="toggleSearchOption()">{{selectedOption.name | translation}}</div>
+      <div class="option_container" *ngIf="isOpenSelectionOption">
+        <div *ngFor="let option of searchOption" [id]="option.value" class="option" (click)="selectOption($event)">{{option.name | translation}}</div>
+      </div>
     </div>
-    <div class="link" *ngIf="isLogin">
-      <fa-icon class="icon" [icon]="faRightFromBracket"></fa-icon>
-      <p>تسجيل الخروج</p>
-    </div>
-    <div class="link" *ngIf="!isLogin">
-      <fa-icon class="icon" [icon]="faRightToBracket"></fa-icon>
-      <p>تسجيل الدخول</p>
-    </div>
-    <div class="link" *ngIf="!isLogin">
-      <fa-icon class="icon" [icon]="faPenToSquare"></fa-icon>
-      <p>إنشاء حساب</p>
-    </div>
-    <div class="link" *ngIf="isLogin && isAdmin">
-      <fa-icon class="icon" [icon]="faGear"></fa-icon>
-      <p>الإعدادات و التحكم</p>
-    </div>
-  </div>
+  </form>
+  <span class="log_container flex-lang" routerLink="/">
+    <h1 class="primary-text">{{"nav.site_name" | translation}}</h1>
+    <span class="logo primary-text">
+      <fa-icon [icon]="faBurst"></fa-icon>
+    </span>
+  </span>
 </nav>
