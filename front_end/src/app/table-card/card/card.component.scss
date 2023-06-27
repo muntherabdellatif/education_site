@@ -1,0 +1,158 @@
+@import "../../../styles.scss";
+
+.cards-row {
+  display: flex;
+  flex-wrap: wrap;
+
+  .card_container {
+    box-shadow: 0 0 8px 0 $color5;
+    width: 300px;
+    border-radius: 21px;
+    overflow: hidden;
+    margin: 10px;
+
+    .card-header {
+      position: relative;
+      max-height: 200px;
+      overflow: hidden;
+      cursor: pointer;
+
+      .top-text {
+        transition: 0.7s;
+        border-radius: 0 0 0 5px;
+        padding: 10px;
+        position: absolute;
+        display: none;
+        z-index: 1;
+      }
+
+      .bottom-text {
+        transition: 0.7s;
+        border-radius: 5px 0 0 0;
+        padding: 10px;
+        position: absolute;
+        display: none;
+        bottom: 0;
+        z-index: 1;
+      }
+
+      img {
+        transition: 0.7s;
+        width: 300px;
+      }
+
+      &:hover {
+
+        .top-text {
+          display: block;
+        }
+
+        .bottom-text {
+          display: block;
+        }
+
+        img {
+          transform: rotate(7deg) scale(120%);
+        }
+      }
+    }
+
+    .card-body {
+      text-align: right;
+      padding: 10px;
+
+      .title {
+        font-size: 16px;
+        margin: 0 0 5px 0;
+      }
+
+      .sub-title {
+        font-size: 14px;
+        margin: 0 0 5px 0;
+      }
+
+      .extra-text {
+        font-size: 12px;
+        margin: 0;
+      }
+
+      .rate-and-like-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+
+        .rate-container {
+          .rate-text {
+            text-align: left;
+
+            .rate {
+              font-size: 30px;
+              font-weight: bold;
+              margin-right: 5px;
+            }
+
+            .rated-user-number {
+              font-size: 15px;
+            }
+          }
+
+          .stars-container {
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            .star {
+              transition: all 0.3s ease-in-out;
+
+              &.active {
+                color: greenyellow;
+              }
+
+              &.not-active {
+                color: $color2;
+              }
+            }
+          }
+        }
+
+        .like {
+          .icon {
+            cursor: pointer;
+          }
+
+          .icon.active {
+            font-size: 32px;
+            color: red;
+          }
+
+          .icon.not-active {
+            font-size: 30px;
+            color: $color5;
+          }
+
+          .icon:hover {
+            font-size: 35px;
+            color: red;
+          }
+        }
+      }
+
+      &:hover .star{
+        animation: moveAndRotate 1s forwards;
+      }
+    }
+  }
+}
+
+@keyframes moveAndRotate {
+  0% {
+    transform: translateX(0) rotate(0); // Starting position
+  }
+  50% {
+    transform: translateX(50px) rotate(360deg); // Move to the right and rotate
+  }
+  100% {
+    transform: translateX(0) rotate(0); // Return to previous state
+  }
+}

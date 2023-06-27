@@ -16,6 +16,11 @@ $color6: #000000;
 
 $site-name-font: 'Hind', sans-serif;
 
+// z index
+$navZIndex: 100;
+$overlayZIndex: 200;
+$popupZIndex: 300;
+
 // page
 $page-padding: 50px;
 
@@ -67,7 +72,7 @@ $input-icon-color: $color3;
     color: #E4E4E6;
   }
   .tertiary-text {
-    color: #000000;
+    color: #CBCAD0;
   }
   // back ground
   .primary-back-ground {
@@ -100,6 +105,37 @@ $input-icon-color: $color3;
 
   .table-lang {
     direction: rtl;
+
+      th,
+      td {
+        text-align: center;
+        border-left: 1px solid $color6;
+        border-bottom: 1px solid $color6;
+      }
+
+
+      th:first-of-type,
+      td:first-of-type {
+        border-right: 1px solid $color6;
+      }
+
+      tr:first-of-type th {
+        border-top: 1px solid $color6;
+      }
+  }
+
+  .card-lang {
+    flex-direction: row-reverse;
+
+      .top-text {
+        left: unset;
+        right: 0;
+      }
+
+      .bottom-text {
+        left: unset;
+        right: 0;
+      }
   }
 }
 
@@ -117,6 +153,37 @@ $input-icon-color: $color3;
 
   .table-lang {
     direction: ltr;
+
+      th,
+      td {
+        text-align: center;
+        border-left: 1px solid $color6;
+        border-bottom: 1px solid $color6;
+      }
+
+
+      th:last-of-type,
+      td:last-of-type {
+        border-right: 1px solid $color6;
+      }
+
+      tr:first-of-type th {
+        border-top: 1px solid $color6;
+      }
+  }
+
+  .card-lang {
+    flex-direction: row;
+
+    .top-text {
+      left: 0;
+      right: unset;
+    }
+
+    .bottom-text {
+      left: 0;
+      right: unset;
+    }
   }
 }
 
@@ -128,4 +195,13 @@ $input-icon-color: $color3;
   padding-top: 20px;
   padding-left: $page-padding;
   padding-right: $page-padding;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: $overlayZIndex;
 }

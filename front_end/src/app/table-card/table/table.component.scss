@@ -4,23 +4,6 @@
   margin-top: 10px;
   width: 100%;
   border-spacing: 0px;
-
-  th,
-  td {
-    text-align: center;
-    border-left: 1px solid $color6;
-    border-bottom: 1px solid $color6;
-  }
-
-
-  th:first-of-type,
-  td:first-of-type {
-    border-right: 1px solid $color6;
-  }
-
-  tr:first-of-type th {
-    border-top: 1px solid $color6;
-  }
 }
 
 

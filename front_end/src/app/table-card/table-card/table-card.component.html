@@ -1,1 +1,2 @@
-<app-table [table]="tableData"></app-table>
+<app-table [table]="tableData" *ngIf="isTable"></app-table>
+<app-card [cards]="cards" *ngIf="!isTable"></app-card>

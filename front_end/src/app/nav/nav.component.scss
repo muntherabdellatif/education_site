@@ -5,7 +5,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: $navZIndex;
   height: 70px;
   display: flex;
   justify-content: space-between;
@@ -138,6 +138,7 @@ nav {
     background: $color1;
     border-radius: 8px;
     box-shadow: 0 0 8px 0 $color6;
+    z-index: $popupZIndex;
 
     .link {
       display: flex;
@@ -174,6 +175,7 @@ nav {
     border-radius: 8px;
     box-shadow: 0 0 8px 0 $color6;
     overflow: hidden;
+    z-index: $popupZIndex;
 
     .language {
         text-align: center;

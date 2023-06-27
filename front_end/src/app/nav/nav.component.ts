@@ -76,6 +76,11 @@ export class NavComponent {
     this.isOpenSelectionOption = !this.isOpenSelectionOption;
   }
 
+  closePopups() {
+    this.showLanguagePopup = false;
+    this.showUserPopup = false;
+  }
+
   selectOption($event : Event) {
     const selectedValue = ($event.target as HTMLElement)?.id;
     const selectedOption = this.searchOption.find((option)=> option.value == selectedValue);

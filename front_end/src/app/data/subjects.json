@@ -3,6 +3,7 @@
     "name": "برمجة كائنية التوجه oop",
     "university": "الجامعة الاردنية",
     "major": "هندسة البرمجيات",
+    "image": "software-eng.jpg",
     "description": "وتعد OOP من المنهجيات الشائعة في البرمجة الحاسوبية ويتم استخدامها في تطوير العديد من التطبيقات المختلفة مثل البرامج الحاسوبية وتطبيقات الجوال وألعاب الفيديو والعديد من الأنظمة الحاسوبية الكبيرة.",
     "subjects": [
       "مفهوم البرمجة الشيئية وما هي مزاياها وأهميتها في تطوير البرامج.",
@@ -23,6 +24,7 @@
     "name": "أساسايات البرمجة بال c++",
     "university": "الجامعة الاردنية",
     "major": "هندسة البرمجيات",
+    "image": "software-eng-02.jpg",
     "description": "",
     "subjects": [],
     "compulsory_or_optional": "إجباري",
@@ -31,12 +33,13 @@
     "prerequisite": 2,
     "rate": 4,
     "fans": 170,
-    "is_liked": true
+    "is_liked": false
   },
   {
     "name": "1 مهارات حلسوب",
     "university": "الجامعة الاردنية",
     "major": "هندسة البرمجيات",
+    "image": "software-eng-03.jpg",
     "description": "",
     "subjects": [],
     "compulsory_or_optional": "إجباري",
@@ -51,6 +54,7 @@
     "name": "علم نفس",
     "university": "الجامعة الاردنية",
     "major": "هندسة البرمجيات",
+    "image": "pyschology.jpg",
     "description": "",
     "subjects": [],
     "compulsory_or_optional": "إختياري",
