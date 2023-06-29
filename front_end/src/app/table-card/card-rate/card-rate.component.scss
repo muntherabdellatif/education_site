@@ -1,0 +1,51 @@
+@import "../../../styles.scss";
+
+.rate-container {
+  .rate-text {
+    text-align: left;
+
+    .rate {
+      font-size: 30px;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    .rated-user-number {
+      font-size: 15px;
+    }
+  }
+
+  .stars-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+
+    .star {
+      transition: all 0.3s ease-in-out;
+
+      &.active {
+        color: greenyellow;
+      }
+
+      &.not-active {
+        color: $color2;
+      }
+    }
+  }
+
+  &:hover .star{
+    animation: moveAndRotate 1s forwards;
+  }
+}
+
+@keyframes moveAndRotate {
+  0% {
+    transform: translateX(0) rotate(0); // Starting position
+  }
+  50% {
+    transform: translateX(50px) rotate(360deg); // Move to the right and rotate
+  }
+  100% {
+    transform: translateX(0) rotate(0); // Return to previous state
+  }
+}

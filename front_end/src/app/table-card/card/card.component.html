@@ -10,19 +10,7 @@
       <h5 class="sub-title secondary-text text-align-lang">{{card.subTitle | textTrim: 30}}</h5>
       <h6 *ngIf="card.extraText" class="extra-text tertiary-text text-align-lang">{{card.extraText | textTrim: 30}}</h6>
       <div class="rate-and-like-container">
-        <div class="rate-container">
-          <div class="rate-text">
-            <span class="rate primary-text">{{card.rate}}</span>
-            <span class="rated-user-number secondary-text">{{card.fans}}</span>
-          </div>
-          <div class="stars-container">
-            <fa-icon class="star active" [icon]="faStar"></fa-icon>
-            <fa-icon class="star active" [icon]="faStar"></fa-icon>
-            <fa-icon class="star active" [icon]="faStar"></fa-icon>
-            <fa-icon class="star active" [icon]="faStarHalfStroke"></fa-icon>
-            <fa-icon class="star not-active" [icon]="faStar"></fa-icon>
-          </div>
-        </div>
+        <app-card-rate [card]="card"></app-card-rate>
         <div class="like">
           <fa-icon class="icon not-active" [icon]="faHeart"
             [ngClass]="{ 'active': card.is_liked, 'not-active': !card.is_liked }"

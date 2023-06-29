@@ -1,2 +1,6 @@
-<app-table [table]="tableData" *ngIf="isTable"></app-table>
-<app-card [cards]="cards" *ngIf="!isTable"></app-card>
+<div class="data-container">
+  <app-filters [isTable]="isTable"></app-filters>
+  <app-table [data]="data" [dataType]="dataType" *ngIf="isTable"></app-table>
+  <app-card [data]="data" [dataType]="dataType" *ngIf="!isTable"></app-card>
+</div>
+

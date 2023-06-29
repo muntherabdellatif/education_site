@@ -1,0 +1,9 @@
+<div class="rate-container">
+  <div class="rate-text">
+    <span class="rate primary-text">{{card.rate}}</span>
+    <span class="rated-user-number secondary-text">{{card.fans}}</span>
+  </div>
+  <div class="stars-container">
+    <fa-icon *ngFor="let star of stars" class="star" [class]="star.class" [icon]="star.icon"></fa-icon>
+  </div>
+</div>
