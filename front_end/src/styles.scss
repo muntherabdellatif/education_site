@@ -59,6 +59,10 @@ $input-icon-color: $color3;
     background-color: $color1;
     color: $color5;
   }
+  // border
+  .secondary-border {
+    border-color: $color4 !important;
+  }
 }
 
 .theme-dark {
@@ -89,6 +93,10 @@ $input-icon-color: $color3;
     background-color: $color5;
     color: #E4E4E6;
   }
+  // border
+  .secondary-border {
+    border-color: $color3 !important;
+  }
 }
 
 .arabic-lang {
@@ -97,6 +105,10 @@ $input-icon-color: $color3;
 
   .flex-lang {
     flex-direction: row;
+  }
+
+  .justify-content-lang {
+    justify-content: end;
   }
 
   .text-align-lang {
@@ -145,6 +157,10 @@ $input-icon-color: $color3;
 
   .flex-lang {
     flex-direction: row-reverse;
+  }
+
+  .justify-content-lang {
+    justify-content: start;
   }
 
   .text-align-lang {

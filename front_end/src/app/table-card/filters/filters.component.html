@@ -1,4 +1,4 @@
-<div class="filters-container">
+<div class="filters-container flex-lang">
   <div class="view-control">
     <div class="icon-container" [id]="'table'" [ngClass]="{'active primary-back-ground': isTable}" (click)="toggleViewMode($event)">
       <fa-icon class="icon" [icon]="faTableColumns"></fa-icon>
@@ -8,5 +8,16 @@
     </div>
   </div>
   <div class="filters">
+    <div *ngFor="let level of filters" class="row justify-content-lang">
+      <div *ngFor="let filter of level" class="filter_container">
+        <div class="option_field card-lang secondary-border" [id]="filter.name" [attr.data-level]="filter.level"  (click)="openOptionPopup($event)">
+          <fa-icon class="icon secondary-text" [icon]="filter.icon"></fa-icon>
+          <p class="selected_option secondary-text">{{filter.selectedOption}}</p>
+        </div>
+        <div *ngIf="filter.showPopup" class="filter_options">
+          <p [id]="option.value" *ngFor="let option of filter.options" class="option">{{option.name | translation}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -7,6 +7,74 @@
 
   .filters {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .row {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      gap: 50px;
+      margin-bottom: 10px;
+
+      .filter_container {
+        display: flex;
+        gap: 2px;
+        align-items: center;
+        position: relative;
+
+        .option_field {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          border-radius: 5px;
+          padding: 5px;
+          border: 1px solid;
+          min-width: 130px;
+          cursor: pointer;
+
+          .icon {
+          }
+
+          p {
+            margin: 0;
+          }
+        }
+
+
+        .selected_option {
+        }
+
+        .filter_options {
+          position: absolute;
+          top: 100%;
+          background: $color1;
+          border-radius: 8px;
+          box-shadow: 0 0 8px 0 $color6;
+          overflow: hidden;
+          z-index: $popupZIndex;
+
+          .option {
+            text-align: center;
+            border-bottom: 1px solid;
+            width: 140px;
+            padding: 10px;
+            cursor: pointer;
+            margin: 0;
+          }
+
+          .option:last-child {
+            border: none;
+          }
+
+          .option:hover {
+            font-size: 18px;
+            background-color: $color5;
+            color: $color1;
+          }
+        }
+      }
+    }
   }
 
   .view-control {
@@ -36,8 +104,6 @@
 
       .icon {
         font-size: 20px;
-
-
       }
     }
   }

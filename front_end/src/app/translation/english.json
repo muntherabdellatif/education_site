@@ -48,5 +48,47 @@
     "workingFields": {
       "name": ""
     }
+  },
+  "filters": {
+    "links": {
+      "major":"Major",
+      "subject":"Subject",
+      "type": "Course or article",
+      "resource" : "Resources",
+      "course_and_article": "Course or article",
+      "course": "Course",
+      "article": "Article"
+    },
+    "majors": {
+      "university":"University",
+      "field": "Field",
+      "competitive_or_not": "Competitive or not",
+      "competitive": "Competitive",
+      "not_competitive": "Not competitive",
+      "GPA": "GPA",
+      "all": "GPA",
+      "95_and_above": "95 and above",
+      "90_to_95": "90 to 95",
+      "80_to_90": "80 to 90",
+      "70_to_80": "70 to 80",
+      "60_to_70": "60 to 70",
+      "less_than_60": "Less than 60"
+    },
+    "subjects": {
+      "university": "University",
+      "major":"Major",
+      "lab_or_class": "lab or class",
+      "lab": "laboratory",
+      "class": "class",
+      "compulsory_or_optional" :" Compulsory or optional",
+      "compulsory": "Compulsory",
+      "optional": "Optional"
+    },
+    "universities": {
+      "city": "City",
+      "government_or_private":"Government or private",
+      "government": "Government",
+      "private": "private"
+    }
   }
 }

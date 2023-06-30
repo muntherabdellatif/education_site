@@ -48,5 +48,47 @@
     "workingFields": {
       "name": ""
     }
+  },
+  "filters": {
+    "links": {
+      "major":"التخصص الجامعي",
+      "subject":"المادة الدراسية",
+      "type": "كورس او مقالة",
+      "resource" : "المصدر",
+      "course_and_article": "كورس أو مقالة",
+      "course": "كورس",
+      "article": "مقالة"
+    },
+    "majors": {
+      "university":"إسم الجامعة",
+      "field": "التصنيف",
+      "competitive_or_not": "تنافسي او موازي",
+      "competitive": "تنافسي",
+      "not_competitive": "موازي",
+      "GPA": "المعدل",
+      "all": "كل المعدلات",
+      "95_and_above": "فوق ال 95",
+      "90_to_95": "من 90 إلى 95",
+      "80_to_90": "من 80 إلى 90",
+      "70_to_80": "من 70 إلى 80",
+      "60_to_70": "من 60 إلى 70",
+      "less_than_60": "أقل من 60"
+    },
+    "subjects": {
+      "university": "إسم الجامعة",
+      "major":"التخصص الجامعي",
+      "lab_or_class": "مادة أو مختبر",
+      "lab": "مختبر",
+      "class": "مادة",
+      "compulsory_or_optional" :"إجبارية أم إختيارية",
+      "compulsory": "إجبارية",
+      "optional": "إختيارية"
+    },
+    "universities": {
+      "city": "المدينة",
+      "government_or_private":"حكومية أم خاصة",
+      "government": "حكومية",
+      "private": "خاصة"
+    }
   }
 }

@@ -21,7 +21,7 @@ export class TranslationService {
     pathArray.forEach(point => {
       result = result[point];
     })
-    return result;
+    return result ? result : path;
   }
 
   setLanguage(language: 'arabic' | 'english') {
