@@ -38,6 +38,7 @@ export class AppComponent {
       this.activeLanguage = data;
     }
     localStorage.setItem('language', this.activeLanguage);
+    location.reload();
   }
 
   arrows: any = [

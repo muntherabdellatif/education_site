@@ -1,5 +1,5 @@
 <div class="data-container">
-  <app-filters [isTable]="isTable"></app-filters>
+  <app-filters [isTable]="isTable" (isTableView)="changeView($event)"></app-filters>
   <app-table [data]="data" [dataType]="dataType" *ngIf="isTable"></app-table>
   <app-card [data]="data" [dataType]="dataType" *ngIf="!isTable"></app-card>
 </div>

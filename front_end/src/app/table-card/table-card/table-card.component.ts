@@ -10,4 +10,8 @@ export class TableCardComponent {
   @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" = "links";
 
   isTable = false;
+
+  changeView(data : boolean) {
+    this.isTable = data;
+  }
 }

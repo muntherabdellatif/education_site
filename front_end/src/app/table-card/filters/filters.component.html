@@ -1,7 +1,11 @@
 <div class="filters-container">
   <div class="view-control">
-    <fa-icon class="icon" [ngClass]="{'active': isTable, 'not-active': !isTable}" [icon]="faTableColumns"></fa-icon>
-    <fa-icon class="icon" [ngClass]="{'active': !isTable, 'not-active': isTable}" [icon]="faImage"></fa-icon>
+    <div class="icon-container" [id]="'table'" [ngClass]="{'active primary-back-ground': isTable}" (click)="toggleViewMode($event)">
+      <fa-icon class="icon" [icon]="faTableColumns"></fa-icon>
+    </div>
+    <div class="icon-container" [id]="'card'" [ngClass]="{'active primary-back-ground': !isTable}" (click)="toggleViewMode($event)">
+      <fa-icon class="icon" [icon]="faImage"></fa-icon>
+    </div>
   </div>
   <div class="filters">
   </div>
