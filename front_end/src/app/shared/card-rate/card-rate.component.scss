@@ -1,6 +1,7 @@
 @import "../../../styles.scss";
 
 .rate-container {
+  cursor: pointer;
   .rate-text {
     text-align: left;
 
@@ -24,7 +25,7 @@
       transition: all 0.3s ease-in-out;
 
       &.active {
-        color: greenyellow;
+        color: $colorGreen;
       }
 
       &.not-active {
@@ -35,6 +36,10 @@
 
   &:hover .star{
     animation: moveAndRotate 1s forwards;
+  }
+
+  &:hover .star.disable-hover{
+    animation: unset;
   }
 }
 

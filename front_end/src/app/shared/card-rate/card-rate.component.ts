@@ -8,6 +8,7 @@ import { faStar, faStarHalfStroke } from '@fortawesome/free-solid-svg-icons';
 })
 export class CardRateComponent {
   @Input() card: any;
+  @Input() disableHover?:boolean = false;
   faStar = faStar;
   faStarHalfStroke = faStarHalfStroke;
 
@@ -31,6 +32,8 @@ export class CardRateComponent {
         star = {icon: faStar, class: "not-active"};
         notActiveStarCount--;
       }
+      if(this.disableHover)
+        star.class += " disable-hover"
       this.stars.push(star);
     }
   }

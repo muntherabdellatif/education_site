@@ -7,7 +7,7 @@ import { MajorComponent } from './major/major.component';
 import { WorkingFieldComponent } from './working-field/working-field.component';
 import { SearchPagesRoutingModule } from './pages-routing.module';
 import { PageHeaderComponent } from './page-header/page-header.component';
-
+import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
     LinkComponent,
@@ -19,6 +19,7 @@ import { PageHeaderComponent } from './page-header/page-header.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     SearchPagesRoutingModule
   ]
 })

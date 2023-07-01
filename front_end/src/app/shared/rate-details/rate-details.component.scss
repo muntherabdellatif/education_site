@@ -1,0 +1,29 @@
+@import "../../../styles.scss";
+
+.rate-detail-container {
+  display: flex;
+  flex-direction: column-reverse;
+
+  .bar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .level {
+      margin: 0 2px 0 0;
+      font-size: 14px;
+    }
+
+    .bar {
+      width: 100px;
+      height: 5px;
+      background-color: $color2;
+      border-radius: 5px;
+
+      .bar-value {
+        height: 5px;
+        background-color: $colorGreen;
+      }
+    }
+  }
+}

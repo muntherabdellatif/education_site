@@ -1,0 +1,8 @@
+<div class="rate-detail-container">
+  <div class="bar-container" *ngFor="let bar of rate">
+    <p class="level">{{bar.level}}</p>
+    <div class="bar">
+      <div [ngStyle]="{'width': bar.percent }" class="bar-value"></div>
+    </div>
+  </div>
+</div>

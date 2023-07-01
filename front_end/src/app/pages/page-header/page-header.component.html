@@ -1,1 +1,14 @@
-<p>page-header works!</p>
+<div class="page-header">
+  <div class="title-and-rate flex-lang">
+    <div class="rate-container">
+      <app-card-rate [card]="{rate: 3.6, fans: 50}" [disableHover]="true"></app-card-rate>
+      <app-rate-details [rateDeTails]="rateDeTails"></app-rate-details>
+    </div>
+    <div class="title-container">
+      <h2 class="title text-align-lang primary-text"> University of Jordan - الجامعة الأردنية</h2>
+      <p class="description text-align-lang secondary-text">عمان، شارع الاميرة رانيا</p>
+    </div>
+  </div>
+  <div class="control">
+  </div>
+</div>

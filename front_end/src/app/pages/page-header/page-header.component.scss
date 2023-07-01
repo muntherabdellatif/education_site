@@ -1,0 +1,28 @@
+@import "../../../styles.scss";
+
+.page-header {
+  .title-and-rate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title-container {
+
+      .title {
+        margin: 0 0 5px 0;
+      }
+
+      .description {
+        margin: 0;
+      }
+    }
+
+    .rate-container {
+      display: flex;
+      gap: 10px;
+    }
+  }
+
+  .control {
+  }
+}
