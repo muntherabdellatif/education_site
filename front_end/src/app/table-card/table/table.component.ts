@@ -9,6 +9,9 @@ export class TableComponent {
   @Input() data: any;
   @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" = "links";
 
+  tableRoutes = {links: "/link", majors: "/major", subjects: "/subject", universities: "/university", workingFields: "/working-field"}
+  currentTableRoute = this.tableRoutes["links"];
+
   table: any;
   tablesData = {
     links: [
@@ -42,18 +45,21 @@ export class TableComponent {
   }
 
   ngOnInit(){
+    this.currentTableRoute = this.tableRoutes[this.dataType];
     this.table = this.formatTableData(this.data);
   }
 
   formatTableData(data:any) {
     const columns = this.tablesData[this.dataType];
-    let tablesData: any[][] = [];
+    let tablesData: any = [];
     for(let i=0 ; i< data.length; i++){
       let rowData: any[] = [];
+      let rowId = 0;
       columns.forEach((d)=>{
         rowData.push(data[i][d.value]);
       })
-      tablesData.push(rowData);
+      rowId = data[i].id;
+      tablesData.push({rowData: rowData, rowId: rowId});
     }
     return {columns,tablesData}
   }

@@ -7,22 +7,22 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { RoadComponent } from './road/road.component';
 import { HomeComponent } from './home/home.component';
-import { UserPageComponent } from './user-page/user-page.component';
 import { SearchPagesModule } from './search_pages/search-pages.module';
 import { SharedModule } from './shared/shared.module';
+import { PagesModule } from './pages/pages.module';
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     RoadComponent,
     HomeComponent,
-    UserPageComponent,
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     TableCardModule,
     SearchPagesModule,
+    PagesModule,
     AppRoutingModule,
     SharedModule
   ],

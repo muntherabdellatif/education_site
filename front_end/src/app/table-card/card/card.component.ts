@@ -10,12 +10,16 @@ export class CardComponent {
   @Input() data: any;
   @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" = "links";
 
+  cardRoutes = {links: "/link", majors: "/major", subjects: "/subject", universities: "/university", workingFields: "/working-field"}
+  currentCardRoute = this.cardRoutes["links"];
+
   faHeart = faHeart;
 
   cards: any;
 
   cardsData = {
     links: [
+      {name: "id", value: "id"},
       {name: "image", value: "image_link"},
       {name: "textTop", value: null},
       {name: "textBottom", value: null},
@@ -27,6 +31,7 @@ export class CardComponent {
       {name: "is_liked", value: "is_liked"},
     ],
     majors: [
+      {name: "id", value: "id"},
       {name: "image", value: "image"},
       {name: "textTop", value: "hours"},
       {name: "textBottom", value: "prise"},
@@ -38,6 +43,7 @@ export class CardComponent {
       {name: "is_liked", value: "is_liked"},
     ],
     subjects: [
+      {name: "id", value: "id"},
       {name: "image", value: "image"},
       {name: "textTop", value: "hours"},
       {name: "textBottom", value: null},
@@ -49,6 +55,7 @@ export class CardComponent {
       {name: "is_liked", value: "is_liked"},
     ],
     universities: [
+      {name: "id", value: "id"},
       {name: "image", value: "image"},
       {name: "textTop", value: "government_or_private"},
       {name: "textBottom", value: null},
@@ -62,6 +69,7 @@ export class CardComponent {
     workingFields: [],
   }
   ngOnInit(){
+    this.currentCardRoute = this.cardRoutes[this.dataType];
     this.cards = this.formatCardData(this.data)
   }
 

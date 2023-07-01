@@ -5,8 +5,8 @@
     </tr>
   </thead>
   <tbody class="table-body">
-    <tr *ngFor="let row of table.tablesData">
-      <td *ngFor="let cell of row">{{cell}}</td>
+    <tr *ngFor="let row of table.tablesData" [routerLink]="[currentTableRoute,row.rowId]">
+      <td *ngFor="let cell of row.rowData">{{cell}}</td>
     </tr>
   </tbody>
 </table>

@@ -7,6 +7,8 @@ import { SharedModule } from '../shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CardRateComponent } from './card-rate/card-rate.component';
 import { FiltersComponent } from './filters/filters.component';
+import { RouterModule } from '@angular/router';
+
 @NgModule({
   declarations: [
     TableComponent,
@@ -18,7 +20,8 @@ import { FiltersComponent } from './filters/filters.component';
   imports: [
     CommonModule,
     SharedModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    RouterModule
   ],
   exports: [
     TableComponent,
