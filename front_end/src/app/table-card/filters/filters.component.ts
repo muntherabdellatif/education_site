@@ -1,6 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { faTableColumns, faImage, faLocationDot, faAngleDown, faCircleCheck, faLaptop } from '@fortawesome/free-solid-svg-icons';
 import { TranslationService } from 'src/app/services/translation.service';
+import * as majorsData from "../../data/majors.json";
+import * as subjectsData from "../../data/subjects.json";
+import * as universitiesData from "../../data/universities.json";
+
 @Component({
   selector: 'app-filters',
   templateUrl: './filters.component.html',
@@ -10,8 +14,6 @@ export class FiltersComponent {
   @Input() isTable: boolean = true;
   @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" = "links";
   @Output() isTableView = new EventEmitter<boolean>();
-
-  constructor(private translation: TranslationService) {}
 
   gpaOptions = [
     {name: "all",          min: 0,  max: 100},
@@ -85,12 +87,18 @@ export class FiltersComponent {
 
   filters: any;
 
+  faTableColumns = faTableColumns;
+  faImage = faImage;
+
+  majors = majorsData;
+  subjects = subjectsData;
+  universities = universitiesData;
+  constructor(private translation: TranslationService) {
+  }
+
   ngOnInit() {
     this.prepareFilters();
   }
-
-  faTableColumns = faTableColumns;
-  faImage = faImage;
 
   toggleViewMode($event: Event) {
     const selectedItem = ($event.currentTarget as HTMLElement).id;
@@ -113,6 +121,7 @@ export class FiltersComponent {
     filters.forEach((filter: any) => {
       filter.selectedOption = filter.options.length ? this.translation.getTranslation(filter.options[0].name) : this.translation.getTranslation(filter.name);
       filter.showPopup = false;
+      this.fitchFilterOptions(filter);
       if(filter.level === 1)
         level_one.push(filter);
       else if (filter.level === 2)
@@ -122,10 +131,79 @@ export class FiltersComponent {
     this.filters = [[...level_one], [...level_two]]
   }
 
+  fitchFilterOptions(filter: any) {
+    // todo this function need to update when we have backend
+    let majorsData: { name: string; value: string; }[] = [];
+    let subjectsData: { name: string; value: string; }[] = [];
+    let universitiesData: { name: string; value: string; }[] = [];
+
+    for(let i = 0 ; i < this.majors.length ; i++){
+      majorsData.push({name : this.majors[i].name, value: this.majors[i].name});
+    }
+    for(let i = 0 ; i < this.subjects.length ; i++){
+      subjectsData.push({name : this.subjects[i].name, value: this.subjects[i].name});
+    }
+    for(let i = 0 ; i < this.universities.length ; i++){
+      universitiesData.push({name : this.universities[i].name, value: this.universities[i].name});
+    }
+    switch (this.dataType) {
+      case "links":
+        switch (filter.name) {
+          case "filters.links.major":
+            filter.options = majorsData;
+            break;
+          case "filters.links.subject":
+            filter.options = subjectsData;
+            break;
+          default:
+            break;
+        }
+        break;
+
+      case "majors":
+        switch (filter.name) {
+          case "filters.majors.university":
+            filter.options = universitiesData;
+            break;
+          default:
+            break;
+        }
+        break;
+
+      case "subjects":
+        switch (filter.name) {
+          case "filters.subjects.major":
+            filter.options = majorsData;
+            break;
+          case "filters.subjects.university":
+            filter.options = universitiesData;
+            break;
+          default:
+            break;
+        }
+        break;
+
+      default:
+        break;
+    }
+  }
+
   openOptionPopup($event: Event) {
     const selectedItem = ($event.currentTarget as HTMLElement);
     const filterName = selectedItem.id;
     const filterLevel = +(selectedItem.dataset['level'] as string);
-    this.filters[filterLevel - 1].find((item: any) => item.name == filterName).showPopup = !this.filters[filterLevel - 1].find((item: any) => item.name == filterName).showPopup;
+    const filter = this.filters[filterLevel - 1].find((item: any) => item.name == filterName);
+    filter.showPopup = !filter.showPopup;
+  }
+
+  selectOption($event: Event){
+    const selectedItem = ($event.currentTarget as HTMLElement);
+    const optionValue = selectedItem.id;
+    const filterLevel = +(selectedItem.dataset['level'] as string);
+    const filterName = selectedItem.dataset['filter'];
+    const filter = this.filters[filterLevel - 1].find((item: any) => item.name == filterName);
+    const selectedOption = filter.options.find((option: any) => option.value == optionValue);
+    filter.selectedOption = this.translation.getTranslation(selectedOption.name);
+    filter.showPopup = false;
   }
 }
