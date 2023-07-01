@@ -13,6 +13,8 @@ export class TranslationService {
 
   getTranslation(path: string) {
     const pathArray = path.split('.');
+    if (!pathArray.length)
+      return
     let result:any = null;
     if (this.currentLanguage == 'arabic')
       result = arabicFile;

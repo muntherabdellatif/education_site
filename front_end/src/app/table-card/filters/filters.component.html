@@ -15,7 +15,14 @@
           <p class="selected_option secondary-text">{{filter.selectedOption}}</p>
         </div>
         <div *ngIf="filter.showPopup" class="filter_options">
-          <p [id]="option.value" *ngFor="let option of filter.options" class="option">{{option.name | translation}}</p>
+          <p
+            [id]="option.value"
+            *ngFor="let option of filter.options"
+            class="option"
+            [attr.data-filter]="filter.name"
+            [attr.data-level]="filter.level"
+            (click)="selectOption($event)"
+          >{{option.name | translation}}</p>
         </div>
       </div>
     </div>
