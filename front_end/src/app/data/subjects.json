@@ -17,7 +17,7 @@
     "hours": 3,
     "lab_or_lectures": "lectures",
     "prerequisite": 1,
-   "rate": [10,50,40,30,100],
+    "rate": [10,50,40,30,100],
     "is_liked": true
   },
   {
