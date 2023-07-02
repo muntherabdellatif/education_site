@@ -4,8 +4,7 @@
     "name": "الجامعة الاردنية",
     "location": "عمان، شارع الاميرة رانيا",
     "image": "unerversity-001.jpg",
-    "rate": 4,
-    "fans": 170,
+    "rate": [1,2,0,3,10],
     "is_liked": true,
     "government_or_private": "حكومية"
   },
@@ -14,8 +13,7 @@
     "name": "الجامعة الهاشمية",
     "location": "محيط مدينة الزرقاء",
     "image": "unerversity-002.jpg",
-    "rate": 3.2,
-    "fans": 250,
+    "rate": [0,2,0,0,10],
     "is_liked": false,
     "government_or_private": "حكومية"
   },
@@ -24,8 +22,7 @@
     "name": "الجامعة الالمانية",
     "location": "المشقر في لواء ناعور",
     "image": "unerversity-003.jpg",
-    "rate": 5,
-    "fans": 12,
+    "rate": [0,2,0,5,10],
     "is_liked": false,
     "government_or_private": "خاصة"
   },
@@ -34,8 +31,7 @@
     "name": "عمان الاهلية",
     "location": "شارع السلط ، المديري ، البلقاء",
     "image": "unerversity-004.jpg",
-    "rate": 4,
-    "fans": 170,
+    "rate": [1,2,3,5,20],
     "is_liked": true,
     "government_or_private": "خاصة"
   }

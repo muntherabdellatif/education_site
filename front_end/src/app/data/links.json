@@ -8,8 +8,7 @@
     "subject": null,
     "image_link": "software-eng.jpg",
     "type": "article" ,
-    "rate": 4.7,
-    "fans": 1010,
+    "rate": [2,9,10,35,150],
     "is_liked": true
   },
   {
@@ -21,8 +20,7 @@
     "subject": null,
     "image_link": "software-eng-02.jpg",
     "type": "article" ,
-    "rate": 2,
-    "fans": 51,
+    "rate": [2,3,5,10,150],
     "is_liked": false
   },
   {
@@ -34,8 +32,7 @@
     "subject": null,
     "image_link": "software-eng-03.jpg",
     "type": "course" ,
-    "rate": 4,
-    "fans": 170,
+   "rate": [2,3,20,40,350],
     "is_liked": true
   },
   {
@@ -47,8 +44,7 @@
     "subject": null,
     "image_link": "software-eng-04.jpg",
     "type": "course" ,
-    "rate": 2.5,
-    "fans": 12,
+    "rate": [10,20,30,40,50],
     "is_liked": false
   }
 ]

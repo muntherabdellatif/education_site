@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { RateService } from 'src/app/services/rate.service';
 
 @Component({
   selector: 'app-card',
@@ -68,6 +69,9 @@ export class CardComponent {
     ],
     workingFields: [],
   }
+
+  constructor(private rateService: RateService){}
+
   ngOnInit(){
     this.currentCardRoute = this.cardRoutes[this.dataType];
     this.cards = this.formatCardData(this.data)
@@ -87,6 +91,12 @@ export class CardComponent {
               break;
             case "prise":
               cardData[field.name] = `${data[i].competitive_prise}Jd/h - ${data[i].not_competitive_prise}Jd/h`
+              break;
+            case "rate":
+              cardData[field.name] = this.rateService.getRate(data[i].rate);
+              break;
+            case "fans":
+              cardData[field.name] =  this.rateService.getFans(data[i].rate);
               break;
             default:
               cardData[field.name] = data[i][field.value]
