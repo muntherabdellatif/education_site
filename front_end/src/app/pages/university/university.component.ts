@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import * as universities from "../../data/universities.json";
+import { University } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-university',
@@ -8,7 +9,7 @@ import * as universities from "../../data/universities.json";
   styleUrls: ['./university.component.scss']
 })
 export class UniversityComponent {
-  university: any;
+  university: University | undefined;
   universitiesData = universities;
 
   constructor(private route: ActivatedRoute){}

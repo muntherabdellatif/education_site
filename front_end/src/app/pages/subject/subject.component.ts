@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import * as subjects from "../../data/subjects.json";
+import { Subject } from 'src/app/shared/interfaces';
 @Component({
   selector: 'app-subject',
   templateUrl: './subject.component.html',
   styleUrls: ['./subject.component.scss']
 })
 export class SubjectComponent {
-  subject: any;
+  subject: Subject | undefined;
   subjectsData = subjects;
 
   constructor(private route: ActivatedRoute){}

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { RateDetail, RatePar } from '../interfaces';
 
 @Component({
   selector: 'app-rate-details',
@@ -6,23 +7,24 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./rate-details.component.scss']
 })
 export class RateDetailsComponent {
-  @Input() rateDeTails: any = [];
+  @Input() rateDeTails: RateDetail[] | undefined;
 
-  rate: any[] | undefined;
+  rate: RatePar[] | undefined;
 
   ngOnInit() {
-    this.rate = this.convertToPercent(this.rateDeTails);
+    if (this.rateDeTails)
+      this.rate = this.convertToPercent(this.rateDeTails);
   }
 
-  convertToPercent(rateDeTails: any): any[]{
+  convertToPercent(rateDeTails: RateDetail[]) {
     let sum = 0;
-    let result: any[] = []
-    rateDeTails.forEach((rate: any) => {
+    let result: RatePar[] = []
+    rateDeTails.forEach((rate: RateDetail) => {
       sum += rate.number;
     });
 
 
-    rateDeTails.forEach((rate: any) => {
+    rateDeTails.forEach((rate: RateDetail) => {
       const bar = {level: rate.level, percent: `${rate.number/sum *100}px`}
       result.push(bar);
     })

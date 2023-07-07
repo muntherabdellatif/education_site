@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { RateService } from 'src/app/services/rate.service';
+import { Card } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-card',
@@ -16,7 +17,7 @@ export class CardComponent {
 
   faHeart = faHeart;
 
-  cards: any;
+  cards: Card[] | undefined;
 
   cardsData = {
     links: [

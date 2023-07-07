@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslationService } from './services/translation.service';
 import { Router } from '@angular/router';
+import { Arrow } from './shared/interfaces';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -41,7 +42,7 @@ export class AppComponent {
     location.reload();
   }
 
-  arrows: any = [
+  arrows: Arrow[] = [
   {
     ref: "Path-1",
     href: "#Path-1",

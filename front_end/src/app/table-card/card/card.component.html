@@ -6,8 +6,8 @@
       <img [src]="'./../../../assets/image/' + card.image" alt="image">
     </div>
     <div class="card-body table-body">
-      <h4 class="title primary-text text-align-lang" [routerLink]="[currentCardRoute,card.id]">{{card.title | textTrim: 30}}</h4>
-      <h5 class="sub-title secondary-text text-align-lang">{{card.subTitle | textTrim: 30}}</h5>
+      <h4 *ngIf="card.title" class="title primary-text text-align-lang" [routerLink]="[currentCardRoute,card.id]">{{card.title | textTrim: 30}}</h4>
+      <h5 *ngIf="card.subTitle" class="sub-title secondary-text text-align-lang">{{card.subTitle | textTrim: 30}}</h5>
       <h6 *ngIf="card.extraText" class="extra-text tertiary-text text-align-lang">{{card.extraText | textTrim: 30}}</h6>
       <div class="rate-and-like-container">
         <app-card-rate [card]="card"></app-card-rate>

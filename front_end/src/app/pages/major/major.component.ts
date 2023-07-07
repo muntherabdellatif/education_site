@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import * as majors from "../../data/majors.json";
+import { Major } from 'src/app/shared/interfaces';
 @Component({
   selector: 'app-major',
   templateUrl: './major.component.html',
   styleUrls: ['./major.component.scss']
 })
 export class MajorComponent {
-  major: any;
+  major: Major | undefined;
   majorsData = majors;
 
   constructor(private route: ActivatedRoute){}
