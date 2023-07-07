@@ -8,7 +8,11 @@
     </div>
   </div>
   <div class="filters">
-    <div *ngFor="let level of filters" class="row justify-content-lang">
+    <div *ngFor="let level of filters" class="row justify-content-lang flex-lang">
+      <div class="search-here secondary-border" *ngIf="!hasLevelOneFilter">
+        <input type="text" class="text-align-lang secondary-text" [placeholder]="'filters.search_placeHolder' | translation" [(ngModel)]="search" (keyup.enter)="handelSearch()">
+        <fa-icon class="icon secondary-text" [icon]="faMagnifyingGlass"></fa-icon>
+      </div>
       <div *ngFor="let filter of level" class="filter_container">
         <div class="option_field card-lang secondary-border" [id]="filter.name" [attr.data-level]="filter.level"  (click)="openOptionPopup($event)">
           <fa-icon class="icon secondary-text" [icon]="filter.icon"></fa-icon>

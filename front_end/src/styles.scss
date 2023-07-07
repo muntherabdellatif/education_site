@@ -42,6 +42,9 @@ $input-icon-color: $color3;
   }
   .secondary-text {
     color: #444152;
+    &::placeholder {
+      color: #444152;
+    }
   }
   .tertiary-text {
     color: #8E8AA5;
@@ -76,6 +79,9 @@ $input-icon-color: $color3;
   }
   .secondary-text {
     color: #E4E4E6;
+    &::placeholder {
+      color: #E4E4E6;
+    }
   }
   .tertiary-text {
     color: #CBCAD0;

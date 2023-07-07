@@ -74,6 +74,31 @@
           }
         }
       }
+
+      .search-here {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 5px;
+        padding: 5px;
+        border: 1px solid;
+        min-width: 130px;
+        cursor: pointer;
+
+        input {
+          background-color: transparent;
+          border: none;
+          font-size: 14px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .icon {
+        }
+      }
+
     }
   }
 

@@ -7,6 +7,7 @@ import { MajorComponent } from './major/major.component';
 import { WorkingFieldComponent } from './working-field/working-field.component';
 import { SearchPagesRoutingModule } from './pages-routing.module';
 import { PageHeaderComponent } from './page-header/page-header.component';
+import { TableCardModule } from '../table-card/table-card.module';
 import { SharedModule } from '../shared/shared.module';
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    SearchPagesRoutingModule
+    SearchPagesRoutingModule,
+    TableCardModule
   ]
 })
 export class PagesModule { }

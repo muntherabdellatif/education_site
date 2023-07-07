@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FiltersComponent } from './filters/filters.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     SharedModule,
     FontAwesomeModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     TableComponent,

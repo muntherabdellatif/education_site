@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { SearchPagesModule } from './search_pages/search-pages.module';
 import { SharedModule } from './shared/shared.module';
 import { PagesModule } from './pages/pages.module';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { PagesModule } from './pages/pages.module';
     SearchPagesModule,
     PagesModule,
     AppRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

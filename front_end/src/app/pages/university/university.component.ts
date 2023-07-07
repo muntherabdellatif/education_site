@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import * as universities from "../../data/universities.json";
 import { University } from 'src/app/shared/interfaces';
+import * as majorsData from '../../data/majors.json'
 
 @Component({
   selector: 'app-university',
@@ -11,6 +12,7 @@ import { University } from 'src/app/shared/interfaces';
 export class UniversityComponent {
   university: University | undefined;
   universitiesData = universities;
+  majors = majorsData;
 
   constructor(private route: ActivatedRoute){}
 

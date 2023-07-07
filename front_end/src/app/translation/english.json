@@ -89,6 +89,7 @@
       "government_or_private":"Government or private",
       "government": "Government",
       "private": "private"
-    }
+    },
+    "search_placeHolder": "Search here"
   }
 }

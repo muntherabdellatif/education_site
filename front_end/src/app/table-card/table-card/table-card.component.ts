@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class TableCardComponent {
   @Input() data: any;
   @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" = "links";
-
+  @Input() hasLevelOneFilter? = true;
   isTable = false;
 
   changeView(data : boolean) {

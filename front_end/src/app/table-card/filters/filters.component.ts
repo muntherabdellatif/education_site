@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { faTableColumns, faImage, faLocationDot, faAngleDown, faCircleCheck, faLaptop } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faTableColumns, faImage, faLocationDot, faAngleDown, faCircleCheck, faLaptop } from '@fortawesome/free-solid-svg-icons';
 import { TranslationService } from 'src/app/services/translation.service';
 import * as majorsData from "../../data/majors.json";
 import * as subjectsData from "../../data/subjects.json";
@@ -13,7 +13,9 @@ import * as universitiesData from "../../data/universities.json";
 export class FiltersComponent {
   @Input() isTable: boolean = true;
   @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" = "links";
+  @Input() hasLevelOneFilter? = true;
   @Output() isTableView = new EventEmitter<boolean>();
+  search: string = "";
 
   gpaOptions = [
     {name: "all",          min: 0,  max: 100},
@@ -89,6 +91,7 @@ export class FiltersComponent {
 
   faTableColumns = faTableColumns;
   faImage = faImage;
+  faMagnifyingGlass = faMagnifyingGlass;
 
   majors = majorsData;
   subjects = subjectsData;
@@ -127,8 +130,10 @@ export class FiltersComponent {
       else if (filter.level === 2)
         level_two.push(filter);
     });
-
-    this.filters = [[...level_one], [...level_two]]
+    if (this.hasLevelOneFilter)
+      this.filters = [[...level_one], [...level_two]]
+    else
+      this.filters = [[...level_two]]
   }
 
   fitchFilterOptions(filter: any) {
@@ -191,7 +196,9 @@ export class FiltersComponent {
   openOptionPopup($event: Event) {
     const selectedItem = ($event.currentTarget as HTMLElement);
     const filterName = selectedItem.id;
-    const filterLevel = +(selectedItem.dataset['level'] as string);
+    let filterLevel = +(selectedItem.dataset['level'] as string);
+    if (!this.hasLevelOneFilter)
+      filterLevel--;
     const filter = this.filters[filterLevel - 1].find((item: any) => item.name == filterName);
     filter.showPopup = !filter.showPopup;
   }
@@ -199,11 +206,16 @@ export class FiltersComponent {
   selectOption($event: Event){
     const selectedItem = ($event.currentTarget as HTMLElement);
     const optionValue = selectedItem.id;
-    const filterLevel = +(selectedItem.dataset['level'] as string);
+    let filterLevel = +(selectedItem.dataset['level'] as string);
+    if (!this.hasLevelOneFilter)
+      filterLevel--;
     const filterName = selectedItem.dataset['filter'];
     const filter = this.filters[filterLevel - 1].find((item: any) => item.name == filterName);
     const selectedOption = filter.options.find((option: any) => option.value == optionValue);
     filter.selectedOption = this.translation.getTranslation(selectedOption.name);
     filter.showPopup = false;
+  }
+
+  handelSearch() {
   }
 }

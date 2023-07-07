@@ -89,6 +89,7 @@
       "government_or_private":"حكومية أم خاصة",
       "government": "حكومية",
       "private": "خاصة"
-    }
+    },
+    "search_placeHolder": "إبحث هنا"
   }
 }
