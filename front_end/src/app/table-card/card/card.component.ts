@@ -10,9 +10,9 @@ import { Card } from 'src/app/shared/interfaces';
 })
 export class CardComponent {
   @Input() data: any;
-  @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" = "links";
+  @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" | "skills"= "links";
 
-  cardRoutes = {links: "/link", majors: "/major", subjects: "/subject", universities: "/university", workingFields: "/working-field"}
+  cardRoutes = {links: "/link", majors: "/major", subjects: "/subject", universities: "/university", workingFields: "/working-field", skills: "/skill"}
   currentCardRoute = this.cardRoutes["links"];
 
   faHeart = faHeart;
@@ -68,7 +68,30 @@ export class CardComponent {
       {name: "fans", value: "fans"},
       {name: "is_liked", value: "is_liked"},
     ],
-    workingFields: [],
+    workingFields: [
+      {name: "id", value: "id"},
+      {name: "image", value: "image_link"},
+      {name: "textTop", value: null},
+      {name: "textBottom", value: null},
+      {name: "title", value: "name"},
+      {name: "subTitle", value: null},
+      {name: "extraText", value: null},
+      {name: "rate", value: "rate"},
+      {name: "fans", value: "fans"},
+      {name: "is_liked", value: "is_liked"},
+    ],
+    skills: [
+      {name: "id", value: "id"},
+      {name: "image", value: "image_link"},
+      {name: "textTop", value: "compulsory_or_optional"},
+      {name: "textBottom", value: null},
+      {name: "title", value: "name"},
+      {name: "subTitle", value: null},
+      {name: "extraText", value: null},
+      {name: "rate", value: null},
+      {name: "fans", value: null},
+      {name: "is_liked", value: null},
+    ]
   }
 
   constructor(private rateService: RateService){}

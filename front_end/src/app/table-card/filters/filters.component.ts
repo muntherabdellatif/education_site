@@ -12,7 +12,7 @@ import * as universitiesData from "../../data/universities.json";
 })
 export class FiltersComponent {
   @Input() isTable: boolean = true;
-  @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" = "links";
+  @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" | "skills" = "links";
   @Input() hasLevelOneFilter? = true;
   @Output() isTableView = new EventEmitter<boolean>();
   search: string = "";
@@ -84,7 +84,25 @@ export class FiltersComponent {
           {name: "filters.universities.private", value: "private"}
       ]}
     ],
-    workingFields: [],
+    workingFields: [
+      {name: 'filters.workingFields.major', icon: faCircleCheck, level: 1, options: []},
+      {name: 'filters.workingFields.required_locally_and_globally', icon: faAngleDown , level: 2,
+        options: [
+          {name: "filters.workingFields.required_locally_and_globally", value: "required_locally_and_globally"},
+          {name: "filters.workingFields.required_locally", value: "required_locally"},
+          {name: "filters.workingFields.required_globally", value: "required_globally"}
+        ]
+      }
+    ],
+    skills: [
+      {name: 'filters.skills.workingFields', icon: faCircleCheck, level: 2, options: []},
+      {name: 'filters.skills.compulsory_or_optional', icon: faAngleDown, level: 2,
+        options: [
+          {name: "filters.skills.compulsory_or_optional", value: "compulsory_or_optional"},
+          {name: "filters.skills.compulsory", value: "compulsory"},
+          {name: "filters.skills.optional", value: "optional"}
+      ]},
+    ]
   };
 
   filters: any;
@@ -182,6 +200,16 @@ export class FiltersComponent {
             break;
           case "filters.subjects.university":
             filter.options = universitiesData;
+            break;
+          default:
+            break;
+        }
+        break;
+
+      case "workingFields":
+        switch (filter.name) {
+          case "filters.workingFields.major":
+            filter.options = majorsData;
             break;
           default:
             break;

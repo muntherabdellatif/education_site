@@ -47,6 +47,11 @@
     },
     "workingFields": {
       "name": ""
+    },
+    "skills": {
+      "name":"المهارة",
+      "compulsory_or_optional": "أساسية أم إختيارية",
+      "prerequisite":"متتطلب سابق"
     }
   },
   "filters": {
@@ -90,13 +95,27 @@
       "government": "حكومية",
       "private": "خاصة"
     },
+    "workingFields": {
+      "major":"التخصص الجامعي",
+      "required_locally_and_globally": "مطلوب محليا و عالميا",
+      "required_locally": "مطلوب محليا",
+      "required_globally": "مطلوب عالميا"
+    },
+    "skills": {
+      "workingFields" : "مسار العمل",
+      "compulsory_or_optional": "أساسية أم إختيارية",
+      "compulsory": "أساسية",
+      "optional": "اختيارية"
+    },
     "search_placeHolder": "إبحث هنا"
   },
   "list": {
     "majors": "التخصصات المتاحة",
     "subjects": "المواد المتاحة",
     "links": "المصادر المتاحة",
+    "skills": "المهارات المطلوبة",
     "topics": "مواضيع المادة",
+    "paths": "المسارات المتاحة",
     "more": "... المزيد"
   },
   "page_header": {

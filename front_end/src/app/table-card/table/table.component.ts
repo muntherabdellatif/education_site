@@ -7,9 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class TableComponent {
   @Input() data: any;
-  @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" = "links";
+  @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" | "skills"= "links";
 
-  tableRoutes = {links: "/link", majors: "/major", subjects: "/subject", universities: "/university", workingFields: "/working-field"}
+  tableRoutes = {links: "/link", majors: "/major", subjects: "/subject", universities: "/university", workingFields: "/working-field", skills: "/skill"}
   currentTableRoute = this.tableRoutes["links"];
 
   table: any;
@@ -42,6 +42,11 @@ export class TableComponent {
       {name: "tables.universities.government_or_private" , value: "government_or_private"},
     ],
     workingFields: [],
+    skills: [
+      {name: "tables.skills.name" , value: "name"},
+      {name: "tables.skills.compulsory_or_optional" , value: "compulsory_or_optional"},
+      {name: "tables.skills.prerequisite" , value: "prerequisite"},
+    ]
   }
 
   ngOnInit(){

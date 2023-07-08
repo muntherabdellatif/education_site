@@ -9,7 +9,7 @@
       <h4 *ngIf="card.title" class="title primary-text text-align-lang" [routerLink]="[currentCardRoute,card.id]">{{card.title | textTrim: 30}}</h4>
       <h5 *ngIf="card.subTitle" class="sub-title secondary-text text-align-lang">{{card.subTitle | textTrim: 30}}</h5>
       <h6 *ngIf="card.extraText" class="extra-text tertiary-text text-align-lang">{{card.extraText | textTrim: 30}}</h6>
-      <div class="rate-and-like-container">
+      <div class="rate-and-like-container" *ngIf="card.rate && card.fans">
         <app-card-rate [card]="card"></app-card-rate>
         <div class="like">
           <fa-icon class="icon not-active" [icon]="faHeart"

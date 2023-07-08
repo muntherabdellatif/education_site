@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "الطباعة السريع على الكيبورد",
+    "description": "",
+    "compulsory_or_optional": "إختيارية",
+    "prerequisite": null,
+    "image_link": "skill_1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "data structure and algorithm basics",
+    "description": "",
+    "compulsory_or_optional": "اجبارية",
+    "prerequisite": null,
+    "image_link": "skill_2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "object oriented programming basics",
+    "description": "",
+    "compulsory_or_optional": "اجبارية",
+    "prerequisite": null,
+    "image_link": "skill_3.jpg"
+  },
+  {
+    "id": 4,
+    "name": "HTML basics",
+    "description": "",
+    "compulsory_or_optional": "اجبارية",
+    "prerequisite": null,
+    "image_link": "skill_4.jpg"
+  }
+]

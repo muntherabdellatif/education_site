@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "Software engineer",
+    "description": "Software engineering is a field that focuses on the development, design, implementation, and maintenance of software systems. Software engineers apply engineering principles and practices to create reliable, scalable, and efficient software solutions.",
+    "image_link": "software-eng-04.jpg",
+    "rate": [0,20,0,50,100],
+    "is_liked": false,
+    "related_to_field": null
+  },
+  {
+    "id": 2,
+    "name": "Front end developer",
+    "description": "",
+    "image_link": "software-eng.jpg",
+    "rate": [0,10,0,40,100],
+    "is_liked": true,
+    "related_to_field": 1
+  },
+  {
+    "id": 3,
+    "name": "Back end developer",
+    "description": "",
+    "image_link": "software-eng-02.jpg",
+    "rate": [30,20,0,50,750],
+    "is_liked": false,
+    "related_to_field": 1
+  },
+   {
+    "id": 4,
+    "name": "Full stack developer",
+    "description": "",
+    "image_link": "software-eng-03.jpg",
+    "rate": [0,40,0,150,80],
+    "is_liked": false,
+    "related_to_field": 1
+  }
+]

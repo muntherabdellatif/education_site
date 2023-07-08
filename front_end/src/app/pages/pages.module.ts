@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LinkComponent } from './link/link.component';
 import { UniversityComponent } from './university/university.component';
 import { SubjectComponent } from './subject/subject.component';
 import { MajorComponent } from './major/major.component';
@@ -13,7 +12,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
-    LinkComponent,
     UniversityComponent,
     SubjectComponent,
     MajorComponent,

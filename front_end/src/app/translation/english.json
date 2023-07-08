@@ -90,13 +90,27 @@
       "government": "Government",
       "private": "private"
     },
+    "workingFields": {
+      "major":"Major",
+      "required_locally_and_globally": "Required locally and globally",
+      "required_locally": "Required locally",
+      "required_globally": "Required globally"
+    },
+    "skills": {
+      "workingFields" : "working path",
+      "compulsory_or_optional": "Compulsory or optional",
+      "compulsory": "Compulsory",
+      "optional": "Optional"
+    },
     "search_placeHolder": "Search here"
   },
   "list": {
     "majors": "Majors List",
     "subjects": "Subjects List",
     "links": "Courses and articles",
+    "skills": "Required skills",
     "topics": "Subject topics",
+    "paths": "Available paths",
     "more": "More..."
   },
   "page_header": {

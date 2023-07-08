@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import * as workingFieldsData from '../../data/workingfields.json'
+import * as workingFieldsData from '../../data/working-fields.json'
 @Component({
   selector: 'app-working-fields',
   templateUrl: './working-fields.component.html',

@@ -1,1 +1,22 @@
-<p>working-field works!</p>
+<app-page-header *ngIf="workingField"
+  [title]="workingField.name"
+  [description]="workingField.description"
+  [rateArray]="workingField.rate"
+  [seeMoreText]="'page_header.see_more_working_field'"
+></app-page-header>
+<app-list
+  [data]="fieldList"
+  [title]="listTitle"
+></app-list>
+<app-table-card
+  [data]="skills"
+  [dataType]="'skills'"
+  [hasLevelOneFilter]="false"
+  [title]="skillsSectionTitle"
+></app-table-card>
+<app-table-card
+  [data]="links"
+  [dataType]="'links'"
+  [hasLevelOneFilter]="false"
+  [title]="linksSectionTitle"
+></app-table-card>

@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TableCardComponent {
   @Input() data: any;
-  @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" = "links";
+  @Input() dataType: "links" | "majors" | "subjects" | "universities" | "workingFields" | "skills" = "links";
   @Input() hasLevelOneFilter? = true;
   @Input() title? = '';
   isTable = false;

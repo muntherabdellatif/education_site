@@ -42,6 +42,16 @@ export interface Major {
   classification: string;
 }
 
+export interface WorkingField {
+  id: number,
+  name: string,
+  description: string,
+  image_link: string,
+  rate: number[],
+  is_liked: boolean,
+  related_to_field: number | null
+}
+
 export interface Subject {
   id: number;
   name: string;
