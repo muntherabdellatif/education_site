@@ -52,6 +52,14 @@ export interface WorkingField {
   related_to_field: number | null
 }
 
+export interface Skill {
+  id: number,
+  name:  string,
+  description: string,
+  compulsory_or_optional: string,
+  prerequisite: number | null,
+  image_link: string
+}
 export interface Subject {
   id: number;
   name: string;

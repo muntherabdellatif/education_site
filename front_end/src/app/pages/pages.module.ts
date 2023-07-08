@@ -9,6 +9,7 @@ import { PageHeaderComponent } from './page-header/page-header.component';
 import { TableCardModule } from '../table-card/table-card.module';
 import { SharedModule } from '../shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { SkillComponent } from './skill/skill.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SubjectComponent,
     MajorComponent,
     WorkingFieldComponent,
-    PageHeaderComponent
+    PageHeaderComponent,
+    SkillComponent
   ],
   imports: [
     CommonModule,

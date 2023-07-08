@@ -15,7 +15,7 @@ export class PageHeaderComponent {
   @Input() seeMore?: boolean = true;
   @Input() seeMoreText: string = "";
   @Input() hasReferences?: boolean = false;
-
+  @Input() hasRate?: boolean = true;
   faEye = faEye;
   faAngleDown = faAngleDown;
   faBook = faBook;

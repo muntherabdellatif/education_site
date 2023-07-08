@@ -1,0 +1,18 @@
+<app-page-header *ngIf="skill"
+  [title]="title"
+  [description]="skill.description"
+  [hasReferences]="false"
+  [seeMore]="false"
+  [readMore]="false"
+  [hasRate]="false"
+></app-page-header>
+<app-list
+  [data]="list"
+  [title]="listTitle"
+></app-list>
+<app-table-card
+  [data]="links"
+  [dataType]="'links'"
+  [hasLevelOneFilter]="false"
+  [title]="linksSectionTitle"
+></app-table-card>

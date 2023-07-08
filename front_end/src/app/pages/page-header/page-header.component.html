@@ -1,9 +1,10 @@
 <div class="page-header">
   <div class="title-and-rate flex-lang">
-    <div class="rate-container">
+    <div class="rate-container" *ngIf="hasRate">
       <app-card-rate [card]="{rate: rate, fans: fans}" [disableHover]="true"></app-card-rate>
       <app-rate-details [rateDeTails]="rateDeTails"></app-rate-details>
     </div>
+    <div class="empty" *ngIf="!hasRate"></div>
     <div class="title-container">
       <h2 class="title text-align-lang primary-text">{{title}}</h2>
       <p class="sub-title text-align-lang secondary-text">{{subTitle}}</p>
