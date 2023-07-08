@@ -91,5 +91,19 @@
       "private": "private"
     },
     "search_placeHolder": "Search here"
+  },
+  "list": {
+    "majors": "Majors List",
+    "subjects": "Subjects List",
+    "links": "Courses and articles",
+    "topics": "Subject topics",
+    "more": "More..."
+  },
+  "page_header": {
+    "read_more": "Read more...",
+    "see_more_major": "See more about the major...",
+    "see_more_subject": "See more about the subject...",
+    "see_more_working_field": "See more about the field...",
+    "references": "Approved references"
   }
 }

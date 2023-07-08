@@ -1,0 +1,26 @@
+.list-container {
+  .header {
+    margin-bottom: 0;
+  }
+
+  ul {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  .button-container {
+    display: flex;
+
+    button {
+      background-color: transparent;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      border-radius: 5px;
+      cursor: pointer;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

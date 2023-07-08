@@ -91,5 +91,19 @@
       "private": "خاصة"
     },
     "search_placeHolder": "إبحث هنا"
+  },
+  "list": {
+    "majors": "التخصصات المتاحة",
+    "subjects": "المواد المتاحة",
+    "links": "المصادر المتاحة",
+    "topics": "مواضيع المادة",
+    "more": "... المزيد"
+  },
+  "page_header": {
+    "read_more": " ... اقرأ المزيد",
+    "see_more_major": " ... شاهد اكثر عن التخصص",
+    "see_more_subject": " ... شاهد اكثر عن المادة ",
+    "see_more_working_field": " ... شاهد أكثر عن المجال",
+    "references": "المراجع المعتمدة"
   }
 }

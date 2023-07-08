@@ -1,6 +1,18 @@
 <app-page-header *ngIf="major"
-  [title]="major.name"
-  [subTitle]="major.classification"
+  [title]="title"
   [description]="major.description"
   [rateArray]="major.rate"
+  [seeMoreText]="'page_header.see_more_major'"
 ></app-page-header>
+<app-table-card
+  [data]="subjects"
+  [dataType]="'subjects'"
+  [hasLevelOneFilter]="false"
+  [title]="subjectsSectionTitle"
+></app-table-card>
+<app-table-card
+  [data]="links"
+  [dataType]="'links'"
+  [hasLevelOneFilter]="false"
+  [title]="linksSectionTitle"
+></app-table-card>

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RateService } from 'src/app/services/rate.service';
-
+import { faAngleDown, faEye, faBook } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-page-header',
   templateUrl: './page-header.component.html',
@@ -11,6 +11,15 @@ export class PageHeaderComponent {
   @Input() subTitle: string = "";
   @Input() description: string = "";
   @Input() rateArray: number[] = [0,0,0,0,0];
+  @Input() readMore?: boolean = true;
+  @Input() seeMore?: boolean = true;
+  @Input() seeMoreText: string = "";
+  @Input() hasReferences?: boolean = false;
+
+  faEye = faEye;
+  faAngleDown = faAngleDown;
+  faBook = faBook;
+
   rate: number = 0;
   fans: number = 0;
   rateDeTails = [
@@ -29,5 +38,14 @@ export class PageHeaderComponent {
     this.rateArray.forEach((rate, index) => {
       this.rateDeTails[index].number = rate;
     })
+  }
+
+  readMoreHandler() {
+  }
+
+  seeMoreHandler() {
+  }
+
+  referencesHandler() {
   }
 }

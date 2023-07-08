@@ -11,7 +11,6 @@ export class TextTrimPipe implements PipeTransform {
       return value;
     }
     const languageCode = franc(value);
-    console.log("languageCode :", languageCode);
     const trimmedValue = value.substr(0, maxLength);
     if (languageCode == 'arb')
       return '...' + trimmedValue ;

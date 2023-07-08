@@ -5,12 +5,14 @@ import { TextTrimPipe } from '../pipes/text-trim.pipe';
 import { CardRateComponent } from './card-rate/card-rate.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RateDetailsComponent } from './rate-details/rate-details.component';
+import { ListComponent } from './list/list.component';
 @NgModule({
   declarations: [
     TranslationPipe,
     TextTrimPipe,
     CardRateComponent,
     RateDetailsComponent,
+    ListComponent,
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { RateDetailsComponent } from './rate-details/rate-details.component';
     TranslationPipe,
     TextTrimPipe,
     CardRateComponent,
-    RateDetailsComponent
+    RateDetailsComponent,
+    ListComponent
   ]
 })
 export class SharedModule { }

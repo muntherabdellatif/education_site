@@ -1,4 +1,5 @@
 <div class="data-container">
+  <h3 class="title primary-text text-align-lang">{{title}}</h3>
   <app-filters [hasLevelOneFilter]="hasLevelOneFilter" [isTable]="isTable" [dataType]="dataType" (isTableView)="changeView($event)"></app-filters>
   <app-table [data]="data" [dataType]="dataType" *ngIf="isTable"></app-table>
   <app-card [data]="data" [dataType]="dataType" *ngIf="!isTable"></app-card>

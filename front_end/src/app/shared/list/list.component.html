@@ -1,0 +1,12 @@
+<div class="list-container" *ngIf="hasData">
+  <h3 class="header primary-text text-align-lang">{{title}}</h3>
+  <ul class="secondary-text list-lang">
+    <li *ngFor="let item of data">{{item}}</li>
+  </ul>
+  <div class="button-container flex-lang-rev">
+    <button class="secondary-border flex-lang">
+      <p class="text-align-lang secondary-text">{{'list.more' | translation}}</p>
+      <fa-icon class="icon secondary-text" [icon]="faAngleDown"></fa-icon>
+    </button>
+  </div>
+</div>

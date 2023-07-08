@@ -30,7 +30,14 @@ export class TranslationService {
     this.currentLanguage = language;
   }
 
-  getLanguage(){
+  getLanguage() {
     return this.currentLanguage
+  }
+
+  getTitle(textArray: string[]) {
+    if (this.currentLanguage == "arabic")
+      return textArray.join("/");
+    else
+      return textArray.reverse().join("/");
   }
 }

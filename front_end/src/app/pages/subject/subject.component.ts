@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import * as subjects from "../../data/subjects.json";
 import { Subject } from 'src/app/shared/interfaces';
+import { TranslationService } from 'src/app/services/translation.service';
+import * as linksData from '../../data/links.json'
+
 @Component({
   selector: 'app-subject',
   templateUrl: './subject.component.html',
@@ -10,10 +13,17 @@ import { Subject } from 'src/app/shared/interfaces';
 export class SubjectComponent {
   subject: Subject | undefined;
   subjectsData = subjects;
+  links = linksData;
+  list: string[] | undefined;
+  title = "";
+  linksSectionTitle = "list.links";
+  listTitle = "list.topics"
 
-  constructor(private route: ActivatedRoute){}
+  constructor(private route: ActivatedRoute, private translate: TranslationService){}
 
   ngOnInit() {
+    this.linksSectionTitle = this.translate.getTranslation(this.linksSectionTitle);
+    this.listTitle = this.translate.getTranslation(this.listTitle);
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id)
@@ -22,5 +32,9 @@ export class SubjectComponent {
             this.subject = this.subjectsData[i];
         }
     });
+    if (this.subject) {
+      this.title = this.translate.getTitle([this.subject.university, this.subject.major, this.subject.name]);
+      this.list = this.subject.subjects;
+    }
   }
 }

@@ -9,6 +9,8 @@ import { SearchPagesRoutingModule } from './pages-routing.module';
 import { PageHeaderComponent } from './page-header/page-header.component';
 import { TableCardModule } from '../table-card/table-card.module';
 import { SharedModule } from '../shared/shared.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     LinkComponent,
@@ -22,7 +24,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     SharedModule,
     SearchPagesRoutingModule,
-    TableCardModule
+    TableCardModule,
+    FontAwesomeModule
   ]
 })
 export class PagesModule { }

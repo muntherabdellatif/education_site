@@ -1,6 +1,17 @@
 <app-page-header *ngIf="subject"
-  [title]="subject.name"
-  [subTitle]="subject.major"
+  [title]="title"
   [description]="subject.description"
   [rateArray]="subject.rate"
+  [seeMoreText]="'page_header.see_more_subject'"
+  [hasReferences]="true"
 ></app-page-header>
+<app-list
+  [data]="list"
+  [title]="listTitle"
+></app-list>
+<app-table-card
+  [data]="links"
+  [dataType]="'links'"
+  [hasLevelOneFilter]="false"
+  [title]="linksSectionTitle"
+></app-table-card>

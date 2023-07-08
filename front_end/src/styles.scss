@@ -115,6 +115,10 @@ $input-icon-color: $color3;
     flex-direction: row;
   }
 
+  .flex-lang-rev {
+    flex-direction: row-reverse;
+  }
+
   .justify-content-lang {
     justify-content: end;
   }
@@ -144,6 +148,10 @@ $input-icon-color: $color3;
       }
   }
 
+  .list-lang {
+     direction: rtl;
+  }
+
   .card-lang {
     flex-direction: row-reverse;
 
@@ -165,6 +173,10 @@ $input-icon-color: $color3;
 
   .flex-lang {
     flex-direction: row-reverse;
+  }
+
+  .flex-lang-rev {
+    flex-direction: row;
   }
 
   .justify-content-lang {
@@ -194,6 +206,10 @@ $input-icon-color: $color3;
       tr:first-of-type th {
         border-top: 1px solid $color6;
       }
+  }
+
+  .list-lang {
+     direction: ltr;
   }
 
   .card-lang {

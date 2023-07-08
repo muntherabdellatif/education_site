@@ -10,6 +10,18 @@
       <p class="description text-align-lang secondary-text">{{description | textTrim:150}}</p>
     </div>
   </div>
-  <div class="control">
+  <div class="control flex-lang-rev">
+    <button *ngIf="readMore" class="see-more secondary-border"(click)="readMoreHandler()">
+      <p type="text" class="text-align-lang secondary-text">{{"page_header.read_more" | translation}}</p>
+      <fa-icon class="icon secondary-text" [icon]="faAngleDown"></fa-icon>
+    </button>
+    <button *ngIf="seeMore" class="see-more secondary-border" (click)="seeMoreHandler()">
+      <p type="text" class="text-align-lang secondary-text">{{ seeMoreText | translation}}</p>
+      <fa-icon class="icon secondary-text" [icon]="faEye"></fa-icon>
+    </button>
+    <button *ngIf="hasReferences" class="references secondary-border" (click)="referencesHandler()">
+      <p type="text" class="text-align-lang secondary-text">{{"page_header.references" | translation}}</p>
+      <fa-icon class="icon secondary-text" [icon]="faBook"></fa-icon>
+    </button>
   </div>
 </div>

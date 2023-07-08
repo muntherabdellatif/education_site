@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import * as universities from "../../data/universities.json";
 import { University } from 'src/app/shared/interfaces';
 import * as majorsData from '../../data/majors.json'
+import { TranslationService } from 'src/app/services/translation.service';
 
 @Component({
   selector: 'app-university',
@@ -13,10 +14,11 @@ export class UniversityComponent {
   university: University | undefined;
   universitiesData = universities;
   majors = majorsData;
-
-  constructor(private route: ActivatedRoute){}
+  majorsSectionTitle = "list.majors";
+  constructor(private route: ActivatedRoute, private translation: TranslationService){}
 
   ngOnInit() {
+    this.majorsSectionTitle = this.translation.getTranslation(this.majorsSectionTitle);
     this.route.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id)
