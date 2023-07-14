@@ -1,13 +1,18 @@
-<app-page-header *ngIf="university"
-  [title]="university.name"
-  [subTitle]="university.location"
-  [rateArray]="university.rate"
-  [readMore]="false"
-  [seeMore]="false"
-></app-page-header>
-<app-table-card
-  [data]="majors"
-  [dataType]="'majors'"
-  [hasLevelOneFilter]="false"
-  [title]="majorsSectionTitle"
-></app-table-card>
+<div *ngIf="isLoading; else content">
+  <p>Loading...</p>
+</div>
+<ng-template #content>
+  <app-page-header *ngIf="university"
+    [title]="university.name"
+    [subTitle]="university.location"
+    [rateArray]="university.rate"
+    [readMore]="false"
+    [seeMore]="false"
+  ></app-page-header>
+  <app-table-card
+    [data]="majors"
+    [dataType]="'majors'"
+    [hasLevelOneFilter]="false"
+    [title]="majorsSectionTitle"
+  ></app-table-card>
+</ng-template>

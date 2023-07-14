@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 // ---- google font ----
-@import url('https://fonts.googleapis.com/css2?family=Hind&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&display=swap');
 body {
   margin: 0;
 }
@@ -15,8 +15,6 @@ $color5: #444152;
 $color6: #000000;
 
 $colorGreen: greenyellow;
-
-$site-name-font: 'Hind', sans-serif;
 
 // z index
 $navZIndex: 100;
@@ -108,6 +106,7 @@ $input-icon-color: $color3;
 }
 
 .arabic-lang {
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
   padding: 0;
   margin: 0;
 
@@ -168,6 +167,7 @@ $input-icon-color: $color3;
 }
 
 .english-lang {
+  font-family: 'PT Serif', serif;
   padding: 0;
   margin: 0;
 

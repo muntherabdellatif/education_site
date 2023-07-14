@@ -13,6 +13,8 @@ export class ListComponent {
   faAngleDown = faAngleDown;
 
   ngOnInit() {
+    console.log(this.data);
+
     this.hasData = this.data ? this.data.length > 0 : false;
   }
 }

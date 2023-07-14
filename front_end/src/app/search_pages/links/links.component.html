@@ -1,1 +1,6 @@
-<app-table-card [data]="data" [dataType]="'links'"></app-table-card>
+<div *ngIf="isLoading; else content">
+  <p>Loading...</p>
+</div>
+<ng-template #content>
+  <app-table-card [data]="data" [dataType]="'links'"></app-table-card>
+</ng-template>

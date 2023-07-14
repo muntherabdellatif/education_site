@@ -1,24 +1,29 @@
-<app-page-header *ngIf="major"
-  [title]="title"
-  [description]="major.description"
-  [rateArray]="major.rate"
-  [seeMoreText]="'page_header.see_more_major'"
-></app-page-header>
-<app-table-card
-  [data]="subjects"
-  [dataType]="'subjects'"
-  [hasLevelOneFilter]="false"
-  [title]="subjectsSectionTitle"
-></app-table-card>
-<app-table-card
-  [data]="workingFields"
-  [dataType]="'workingFields'"
-  [hasLevelOneFilter]="false"
-  [title]="workingFieldsSectionTitle"
-></app-table-card>
-<app-table-card
-  [data]="links"
-  [dataType]="'links'"
-  [hasLevelOneFilter]="false"
-  [title]="linksSectionTitle"
-></app-table-card>
+<div *ngIf="isLoading; else content">
+  <p>Loading...</p>
+</div>
+<ng-template #content>
+  <app-page-header *ngIf="major"
+    [title]="title"
+    [description]="major.description"
+    [rateArray]="major.rate"
+    [seeMoreText]="'page_header.see_more_major'"
+  ></app-page-header>
+  <app-table-card
+    [data]="subjects"
+    [dataType]="'subjects'"
+    [hasLevelOneFilter]="false"
+    [title]="subjectsSectionTitle"
+  ></app-table-card>
+  <app-table-card
+    [data]="workingFields"
+    [dataType]="'workingFields'"
+    [hasLevelOneFilter]="false"
+    [title]="workingFieldsSectionTitle"
+  ></app-table-card>
+  <app-table-card
+    [data]="links"
+    [dataType]="'links'"
+    [hasLevelOneFilter]="false"
+    [title]="linksSectionTitle"
+  ></app-table-card>
+</ng-template>
